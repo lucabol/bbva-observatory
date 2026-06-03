@@ -205,6 +205,14 @@ https://bbva-observatory.azurewebsites.net/otel/v1/traces
    3. Select **Direct Telemetry Reviewer** in Chat.
    4. Stop the agent session; the hook posts the completed session trace to the deployed `POST /otel/v1/traces` endpoint.
 
+   To run this agent from the GitHub cloud agent (the Copilot chat on github.com), allow the dashboard host through the coding agent firewall. The cloud agent blocks outbound requests to hosts that are not on its allowlist, so the telemetry hook cannot reach the dashboard until you add it. In the repository **Settings → Copilot → Coding agent → Custom allowlist**, add the host (domain only, not the full path):
+
+   ```text
+   bbva-observatory.azurewebsites.net
+   ```
+
+   Save the allowlist, then start a new cloud agent session so the change takes effect.
+
 5. Run the standalone simulator to see how an agent runtime can collect its own spans while it works and flush them directly to the same route:
 
    ```powershell
