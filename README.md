@@ -1,4 +1,4 @@
-# Sprint AI Flow Observatory
+# Sprint AI Flow Dashboard
 
 A self-contained local demo that implements the three requested solution areas:
 
