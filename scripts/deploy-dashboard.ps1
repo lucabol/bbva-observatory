@@ -99,6 +99,36 @@ function Set-BasicPublishingPolicyAllow {
   }
 }
 
+function Publish-WebAppArchiveWithRetry {
+  param(
+    [string]$ResourceGroup,
+    [string]$AppName,
+    [string]$ArchivePath,
+    [int]$MaxAttempts = 5,
+    [int]$DelaySeconds = 10
+  )
+
+  for ($Attempt = 1; $Attempt -le $MaxAttempts; $Attempt++) {
+    try {
+      Write-Host "> Publish-AzWebApp -ArchivePath $ArchivePath (attempt $Attempt/$MaxAttempts)"
+      Publish-AzWebApp `
+        -ResourceGroupName $ResourceGroup `
+        -Name $AppName `
+        -ArchivePath $ArchivePath `
+        -Force | Out-Null
+      return
+    } catch {
+      $Message = $_.Exception.Message
+      if ($Attempt -ge $MaxAttempts -or $Message -notmatch "Unauthorized") {
+        throw
+      }
+
+      Write-Host "Publish endpoint is not ready yet after enabling publishing credentials; retrying in $DelaySeconds seconds."
+      Start-Sleep -Seconds $DelaySeconds
+    }
+  }
+}
+
 $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 $TempRoot = Join-Path ([System.IO.Path]::GetTempPath()) "bbva-dashboard-deploy-$([System.Guid]::NewGuid().ToString('N'))"
 $PackageRoot = Join-Path $TempRoot "package"
@@ -228,6 +258,12 @@ $($_.Exception.Message)
     -AppName $AppName `
     -PolicyName "scm"
 
+  $OriginalFtpBasicPublishingAllowed = Get-BasicPublishingPolicyAllow `
+    -SubscriptionId $SubId `
+    -ResourceGroup $ResourceGroup `
+    -AppName $AppName `
+    -PolicyName "ftp"
+
   try {
     if (-not $OriginalScmBasicPublishingAllowed) {
       Write-Host "> Temporarily enabling SCM basic publishing credentials for zip deployment"
@@ -239,12 +275,20 @@ $($_.Exception.Message)
         -Allow $true
     }
 
-    Write-Host "> Publish-AzWebApp -ArchivePath $ZipPath"
-    Publish-AzWebApp `
-      -ResourceGroupName $ResourceGroup `
-      -Name $AppName `
-      -ArchivePath $ZipPath `
-      -Force | Out-Null
+    if (-not $OriginalFtpBasicPublishingAllowed) {
+      Write-Host "> Temporarily enabling FTP basic publishing credentials for publishing profile access"
+      Set-BasicPublishingPolicyAllow `
+        -SubscriptionId $SubId `
+        -ResourceGroup $ResourceGroup `
+        -AppName $AppName `
+        -PolicyName "ftp" `
+        -Allow $true
+    }
+
+    Publish-WebAppArchiveWithRetry `
+      -ResourceGroup $ResourceGroup `
+      -AppName $AppName `
+      -ArchivePath $ZipPath
   } finally {
     if (-not $OriginalScmBasicPublishingAllowed) {
       Write-Host "> Restoring SCM basic publishing credentials policy to disabled"
@@ -253,6 +297,16 @@ $($_.Exception.Message)
         -ResourceGroup $ResourceGroup `
         -AppName $AppName `
         -PolicyName "scm" `
+        -Allow $false
+    }
+
+    if (-not $OriginalFtpBasicPublishingAllowed) {
+      Write-Host "> Restoring FTP basic publishing credentials policy to disabled"
+      Set-BasicPublishingPolicyAllow `
+        -SubscriptionId $SubId `
+        -ResourceGroup $ResourceGroup `
+        -AppName $AppName `
+        -PolicyName "ftp" `
         -Allow $false
     }
   }
