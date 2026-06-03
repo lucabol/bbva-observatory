@@ -124,6 +124,16 @@ GET  /api/model              Full normalized dashboard model</pre>
           Repositories
           <textarea id="githubRepos" name="repositories" rows="5" placeholder="OWNER/REPO&#10;OWNER/ANOTHER-REPO"></textarea>
         </label>
+        <div class="checkbox-row">
+          <label>
+            <input id="includeCopilotMetrics" type="checkbox">
+            Also fetch Copilot usage metrics (real AI-usage numerator)
+          </label>
+        </div>
+        <label>
+          Attribute Copilot lines to repo (optional)
+          <input id="attributeCopilotTo" name="attributeCopilotTo" type="text" placeholder="OWNER/REPO (defaults to config repo)">
+        </label>
         <div class="form-row">
           <label>
             Since

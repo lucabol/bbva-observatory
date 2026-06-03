@@ -154,6 +154,8 @@ function githubSettingsFormValues() {
     org: $('#githubOrg').value.trim(),
     repositories: $('#githubRepos').value,
     includeOrgRepos: $('#includeOrgRepos').checked,
+    includeCopilotMetrics: $('#includeCopilotMetrics').checked,
+    attributeCopilotTo: $('#attributeCopilotTo').value.trim(),
     since: $('#githubSince').value || '',
     maxRepos: $('#githubMaxRepos').value || '20',
     maxPullRequestsPerRepo: $('#githubMaxPrs').value || '25',
@@ -179,6 +181,8 @@ function loadStoredGithubSettings() {
       $('#githubOrg').value = settings.org || '';
       $('#githubRepos').value = settings.repositories || '';
       $('#includeOrgRepos').checked = Boolean(settings.includeOrgRepos);
+      $('#includeCopilotMetrics').checked = Boolean(settings.includeCopilotMetrics);
+      $('#attributeCopilotTo').value = settings.attributeCopilotTo || '';
       $('#githubSince').value = settings.since || '';
       $('#githubMaxRepos').value = settings.maxRepos || '20';
       $('#githubMaxPrs').value = settings.maxPullRequestsPerRepo || '25';
@@ -216,10 +220,11 @@ function clearStoredGithubToken() {
 }
 
 function bindGithubSettingsPersistence() {
-  for (const selector of ['#githubOrg', '#githubRepos', '#githubSince', '#githubMaxRepos', '#githubMaxPrs']) {
+  for (const selector of ['#githubOrg', '#githubRepos', '#attributeCopilotTo', '#githubSince', '#githubMaxRepos', '#githubMaxPrs']) {
     $(selector).addEventListener('input', persistGithubSettings);
   }
   $('#includeOrgRepos').addEventListener('change', persistGithubSettings);
+  $('#includeCopilotMetrics').addEventListener('change', persistGithubSettings);
   $('#rememberGithubToken').addEventListener('change', persistGithubSettings);
   $('#githubToken').addEventListener('input', () => {
     if ($('#rememberGithubToken').checked) persistGithubSettings();
@@ -236,6 +241,8 @@ async function syncGithubSettings(event) {
     org: $('#githubOrg').value.trim(),
     repositories: $('#githubRepos').value.trim(),
     includeOrgRepos: $('#includeOrgRepos').checked,
+    includeCopilotMetrics: $('#includeCopilotMetrics').checked,
+    attributeCopilotTo: $('#attributeCopilotTo').value.trim() || null,
     since: $('#githubSince').value || null,
     maxRepos: Number($('#githubMaxRepos').value || 20),
     maxPullRequestsPerRepo: Number($('#githubMaxPrs').value || 25)

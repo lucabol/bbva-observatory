@@ -267,12 +267,240 @@ async function syncGithubPullRequests(options = {}) {
   };
 }
 
+function toNumber(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function emptyFeatureTotal(feature) {
+  return { feature, loc_added_sum: 0, loc_deleted_sum: 0, loc_suggested_to_add_sum: 0 };
+}
+
+function addToFeature(map, feature, added, deleted, suggested) {
+  const entry = map.get(feature) || emptyFeatureTotal(feature);
+  entry.loc_added_sum += toNumber(added);
+  entry.loc_deleted_sum += toNumber(deleted);
+  entry.loc_suggested_to_add_sum += toNumber(suggested);
+  map.set(feature, entry);
+}
+
+// Extracts AI LoC for every feature bucket the response exposes. Per the Copilot
+// metrics nuance, the numerator must sum code completions AND the agentic feature
+// blocks (agent_edit, chat_panel_agent_mode, chat_panel_custom_mode); looking only
+// at inline completions wildly undercounts agent-heavy work.
+function extractFeatureTotals(dayMetrics) {
+  const map = new Map();
+
+  // 1. Richer user/enterprise export already shaped as per-feature LoC rows.
+  const explicitFeatures = Array.isArray(dayMetrics.totals_by_feature) && dayMetrics.totals_by_feature.length
+    ? dayMetrics.totals_by_feature
+    : Array.isArray(dayMetrics.totals_by_language_feature) && dayMetrics.totals_by_language_feature.length
+      ? dayMetrics.totals_by_language_feature
+      : [];
+  for (const entry of explicitFeatures) {
+    addToFeature(map, entry.feature || 'unknown', entry.loc_added_sum, entry.loc_deleted_sum, entry.loc_suggested_to_add_sum);
+  }
+
+  // 2. IDE code completions bucket from the standard org/enterprise metrics API.
+  const completions = dayMetrics.copilot_ide_code_completions;
+  if (completions && Array.isArray(completions.editors)) {
+    for (const editor of completions.editors) {
+      for (const model of editor.models || []) {
+        for (const language of model.languages || []) {
+          addToFeature(
+            map,
+            'code_completion',
+            language.total_code_lines_accepted,
+            0,
+            language.total_code_lines_suggested
+          );
+        }
+      }
+    }
+  }
+
+  // 3. IDE chat bucket (agent + custom mode). The metrics API reports activity
+  //    counts and accepted lines for chat-driven code insertions.
+  const ideChat = dayMetrics.copilot_ide_chat;
+  if (ideChat && Array.isArray(ideChat.editors)) {
+    for (const editor of ideChat.editors) {
+      for (const model of editor.models || []) {
+        const added = model.total_chat_insertion_events ?? model.total_code_lines_accepted ?? 0;
+        addToFeature(map, 'chat_panel_agent_mode', added, 0, 0);
+      }
+    }
+  }
+
+  return [...map.values()];
+}
+
+function normalizeCopilotMetricsRow(dayMetrics, context = {}) {
+  const features = extractFeatureTotals(dayMetrics);
+  const row = {
+    day: dayMetrics.date || dayMetrics.day,
+    source: 'copilot_metrics_api',
+    scope: context.scope || 'org',
+    used_agent: features.some(f => f.feature === 'agent_edit' && (f.loc_added_sum || f.loc_deleted_sum)),
+    totals_by_feature: features.length ? features : [emptyFeatureTotal('code_completion')]
+  };
+  if (context.org) row.org = context.org;
+  if (context.enterprise) row.enterprise_id = context.enterprise;
+  if (context.repo) row.repo = context.repo;
+  return row;
+}
+
+async function fetchCopilotMetrics(options = {}) {
+  const token = String(options.token || '').trim();
+  const request = options.request || githubGet;
+  const org = String(options.org || '').trim();
+  const enterprise = String(options.enterprise || '').trim();
+  if (!org && !enterprise) {
+    const error = new Error('A GitHub organization or enterprise is required to fetch Copilot usage metrics.');
+    error.statusCode = 400;
+    error.code = 'copilot_metrics_scope_missing';
+    error.hint = 'Enter an organization in the Settings tab (or provide an enterprise) before requesting Copilot usage metrics.';
+    throw error;
+  }
+  const params = [];
+  if (options.since) {
+    const sinceDate = new Date(options.since);
+    if (!Number.isNaN(sinceDate.getTime())) params.push(`since=${encodeURIComponent(sinceDate.toISOString())}`);
+  }
+  const query = params.length ? `?${params.join('&')}` : '';
+
+  // For enterprises, prefer the 28-day user-level report. It carries the richer
+  // per-feature LoC breakdown (agent_edit + chat_panel_* blocks) the standard
+  // metrics endpoint omits, so the AI-usage numerator is not undercounted.
+  // Fall back to the standard /copilot/metrics endpoint if that report is not
+  // available (e.g. missing scope or unsupported tenant).
+  if (enterprise) {
+    const reportPath = `/enterprises/${encodeURIComponent(enterprise)}/copilot/metrics/reports/enterprise-28-day/latest`;
+    try {
+      const report = await request(reportPath, token);
+      const reportDays = normalizeUserLevelReport(report.data);
+      if (reportDays.length) {
+        return { days: reportDays, rateLimit: report.rateLimit, scope: 'enterprise', org, enterprise, source_endpoint: 'enterprise-28-day' };
+      }
+    } catch (error) {
+      if (!(error.statusCode === 404 || error.statusCode === 403 || error.statusCode === 422)) throw error;
+      // Otherwise fall through to the standard metrics endpoint below.
+    }
+  }
+
+  const base = enterprise
+    ? `/enterprises/${encodeURIComponent(enterprise)}/copilot/metrics`
+    : `/orgs/${encodeURIComponent(org)}/copilot/metrics`;
+  const result = await request(`${base}${query}`, token);
+  const days = Array.isArray(result.data) ? result.data : [];
+  return { days, rateLimit: result.rateLimit, scope: enterprise ? 'enterprise' : 'org', org, enterprise, source_endpoint: 'copilot-metrics' };
+}
+
+// The 28-day user-level report groups per-user rows that already carry
+// totals_by_feature / totals_by_language_feature. Aggregate them by day so each
+// returned object matches the shape normalizeCopilotMetricsRow expects.
+function normalizeUserLevelReport(report) {
+  const rows = Array.isArray(report) ? report : (report && Array.isArray(report.users) ? report.users : []);
+  if (!rows.length) return [];
+  const byDay = new Map();
+  for (const row of rows) {
+    const day = row.day || row.date || 'unknown';
+    const features = Array.isArray(row.totals_by_feature) && row.totals_by_feature.length
+      ? row.totals_by_feature
+      : Array.isArray(row.totals_by_language_feature) && row.totals_by_language_feature.length
+        ? row.totals_by_language_feature
+        : [];
+    if (!features.length) continue;
+    const map = byDay.get(day) || new Map();
+    for (const entry of features) {
+      addToFeature(map, entry.feature || 'unknown', entry.loc_added_sum, entry.loc_deleted_sum, entry.loc_suggested_to_add_sum);
+    }
+    byDay.set(day, map);
+  }
+  return [...byDay.entries()].map(([day, map]) => ({ date: day, totals_by_feature: [...map.values()] }));
+}
+
+function readNdjsonRows(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+  return fs.readFileSync(filePath, 'utf8')
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(line => { try { return JSON.parse(line); } catch { return null; } })
+    .filter(Boolean);
+}
+
+function copilotRowKey(row) {
+  return `${row.source || 'manual'}::${row.scope || ''}::${row.org || row.enterprise_id || ''}::${row.repo || ''}::${row.day || ''}`;
+}
+
+function upsertCopilotUsageRows(outputFile, rows) {
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+  const existing = readNdjsonRows(outputFile);
+  const incomingKeys = new Set(rows.map(copilotRowKey));
+  const kept = existing.filter(row => !incomingKeys.has(copilotRowKey(row)));
+  const merged = [...kept, ...rows];
+  fs.writeFileSync(outputFile, merged.length ? merged.map(row => JSON.stringify(row)).join('\n') + '\n' : '', 'utf8');
+  return { before: existing.length, after: merged.length, upserted: rows.length };
+}
+
+async function syncCopilotMetrics(options = {}) {
+  const token = String(options.token || '').trim();
+  if (!token) {
+    const error = new Error('GitHub token is required for live sync.');
+    error.statusCode = 400;
+    throw error;
+  }
+  const runtimeDir = options.runtimeDir || DEFAULT_RUNTIME_DIR;
+  const outputFile = options.outputFile || path.join(runtimeDir, 'copilot-usage-users.ndjson');
+  const repo = parseRepositories(options.attributeTo).slice(0, 1)[0] || '';
+  const fetched = await fetchCopilotMetrics(options);
+  const rows = fetched.days
+    .filter(day => day && day.date)
+    .map(day => normalizeCopilotMetricsRow(day, {
+      org: fetched.org,
+      enterprise: fetched.enterprise,
+      scope: fetched.scope,
+      repo
+    }));
+  const write = upsertCopilotUsageRows(outputFile, rows);
+  const totals = rows.reduce((acc, row) => {
+    for (const feature of row.totals_by_feature) {
+      acc.loc_added += feature.loc_added_sum;
+      acc.loc_deleted += feature.loc_deleted_sum;
+      acc.loc_suggested += feature.loc_suggested_to_add_sum;
+      acc.features.add(feature.feature);
+    }
+    return acc;
+  }, { loc_added: 0, loc_deleted: 0, loc_suggested: 0, features: new Set() });
+  return {
+    scope: fetched.scope,
+    source_endpoint: fetched.source_endpoint || null,
+    org: fetched.org || null,
+    enterprise: fetched.enterprise || null,
+    attributed_repo: repo || null,
+    days_fetched: rows.length,
+    features_captured: [...totals.features],
+    copilot_loc_added: totals.loc_added,
+    copilot_loc_deleted: totals.loc_deleted,
+    copilot_loc_changed: totals.loc_added + totals.loc_deleted,
+    copilot_loc_suggested: totals.loc_suggested,
+    output_file: outputFile,
+    write,
+    rate_limit: fetched.rateLimit
+  };
+}
+
 module.exports = {
   discoverOrgRepos,
+  fetchCopilotMetrics,
   githubGet,
+  normalizeCopilotMetricsRow,
   normalizePullRequest,
+  normalizeUserLevelReport,
   parseRepositories,
   pullRequestsForRepo,
+  syncCopilotMetrics,
   syncGithubPullRequests,
+  upsertCopilotUsageRows,
   upsertPullRequests
 };

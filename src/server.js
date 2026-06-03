@@ -8,7 +8,7 @@ const {
   flattenOtelRecords,
   normalizeWebhookRecord
 } = require('./observatory');
-const { syncGithubPullRequests } = require('./github-sync');
+const { syncGithubPullRequests, syncCopilotMetrics } = require('./github-sync');
 
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -192,9 +192,21 @@ async function handlePostGitHubSync(request, response) {
     maxPullRequestsPerRepo: payload.maxPullRequestsPerRepo,
     runtimeDir: RUNTIME_DIR
   });
+  let copilotMetrics = null;
+  if (payload.includeCopilotMetrics) {
+    copilotMetrics = await syncCopilotMetrics({
+      token: payload.token,
+      org: payload.org,
+      enterprise: payload.enterprise,
+      since: payload.since,
+      attributeTo: payload.attributeCopilotTo,
+      runtimeDir: RUNTIME_DIR
+    });
+  }
   sendJson(response, 200, {
     accepted: true,
     ...summary,
+    copilot_metrics: copilotMetrics,
     token_stored: false,
     next_step: 'Refresh the dashboard or call GET /api/model to see synced PRs.'
   });
