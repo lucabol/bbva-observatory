@@ -1,0 +1,23 @@
+{
+  "timezone": "Europe/Madrid",
+  "defaultRepo": "bbva/demo-payments",
+  "sprints": [
+    {
+      "id": "sprint-24",
+      "name": "Sprint 24",
+      "start": "2026-05-18T00:00:00.000Z",
+      "end": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "sprint-25",
+      "name": "Sprint 25",
+      "start": "2026-06-01T00:00:00.000Z",
+      "end": "2026-06-15T00:00:00.000Z"
+    }
+  ],
+  "agentFeatureBuckets": [
+    "agent_edit",
+    "chat_panel_agent_mode",
+    "chat_panel_custom_mode"
+  ]
+}

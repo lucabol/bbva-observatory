@@ -1,0 +1,2439 @@
+[
+  {
+    "repo": "github/github-app",
+    "number": 4666,
+    "title": "feat: Auto-clean stale sessions",
+    "head_ref": "davsterl/cleanSessions",
+    "base_ref": "main",
+    "user_login": "Davsterl",
+    "created_at": "2026-05-08T00:00:42Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 1274,
+    "deletions": 231,
+    "changed_files": 23,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "de16655a17438eb925b55dd5ee3df8557f69102c",
+        "committed_at": "2026-05-08T16:49:56Z"
+      },
+      {
+        "sha": "edde7007acc81d127cd507b3e5159a517a1a0b54",
+        "committed_at": "2026-05-08T16:49:57Z"
+      },
+      {
+        "sha": "d29bd8aeae3ab3362be2b922b23bf6625bb61377",
+        "committed_at": "2026-05-08T16:49:57Z"
+      },
+      {
+        "sha": "3fce8c715757d3cacd40b0d71df6729ded69e9a3",
+        "committed_at": "2026-05-08T16:49:58Z"
+      },
+      {
+        "sha": "8767f5783af3c7c92ac38acaa2769403a0b6c14a",
+        "committed_at": "2026-05-08T16:49:59Z"
+      },
+      {
+        "sha": "566cac250a70b49e1e3717e37f3b197747d830a2",
+        "committed_at": "2026-05-08T16:49:59Z"
+      },
+      {
+        "sha": "8cf76fd4f78a824ad992ed956e34f29efe0f87d2",
+        "committed_at": "2026-05-08T16:50:00Z"
+      },
+      {
+        "sha": "baebf5ff29e768377ec83ceb4955e2e11479e991",
+        "committed_at": "2026-05-08T16:50:01Z"
+      },
+      {
+        "sha": "33f5c6a4c2e258d097b92b8cc0b0d65db2650f11",
+        "committed_at": "2026-05-08T16:51:34Z"
+      },
+      {
+        "sha": "e9e51faf8de493922b0b21fece8feb4299f8b728",
+        "committed_at": "2026-05-10T12:15:24Z"
+      },
+      {
+        "sha": "ba331ed843d6c93082717663cebcb0c46bbe242e",
+        "committed_at": "2026-05-10T12:17:50Z"
+      },
+      {
+        "sha": "f108c2f2b3e2f7bf193aedd4e2c2d661bed994cf",
+        "committed_at": "2026-05-10T12:23:50Z"
+      },
+      {
+        "sha": "782cf77f3c4226a72c5052da7cd8fe57837ca680",
+        "committed_at": "2026-05-13T12:53:55Z"
+      },
+      {
+        "sha": "8fd65bd0914bf0de2564e98e9c76b84e79e74227",
+        "committed_at": "2026-05-13T12:55:43Z"
+      },
+      {
+        "sha": "d62abbfbe2f17f40c6dbfc5988fb038da58875e7",
+        "committed_at": "2026-05-13T13:11:32Z"
+      },
+      {
+        "sha": "916db33c681a89e0dcfb6b3cdf40328bb45cd557",
+        "committed_at": "2026-05-15T21:20:04Z"
+      },
+      {
+        "sha": "7247d384ccfa33b9a343c3ddeadd0d6ee2421d3e",
+        "committed_at": "2026-05-15T21:28:16Z"
+      },
+      {
+        "sha": "2b76a31f13e5ae274f1326825a39851ce001977b",
+        "committed_at": "2026-05-26T19:28:10Z"
+      },
+      {
+        "sha": "f6148a129f369a8e738297c5f3a0722bee789613",
+        "committed_at": "2026-06-01T20:27:13Z"
+      },
+      {
+        "sha": "74bde9761fda3d3f94ff65418f76af990213743c",
+        "committed_at": "2026-06-01T22:32:58Z"
+      },
+      {
+        "sha": "37264140561cdf990a40de1d75b7c5a247320f69",
+        "committed_at": "2026-06-01T23:44:02Z"
+      },
+      {
+        "sha": "157fc407c5d8eae6bdb24e83a9f848d0d77e2f07",
+        "committed_at": "2026-06-02T01:43:35Z"
+      },
+      {
+        "sha": "882df52dea2ce88644b9ebc55421c17c9d820f7f",
+        "committed_at": "2026-06-02T03:56:13Z"
+      },
+      {
+        "sha": "d16ec4da7b8e677a03399285e9c88d75f804f8e7",
+        "committed_at": "2026-06-02T04:00:58Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 5561,
+    "title": "feat: global shortcut quick chat window",
+    "head_ref": "ramsescab/global-shortcut-quick-chat",
+    "base_ref": "main",
+    "user_login": "ramsescab",
+    "created_at": "2026-05-22T17:31:49Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 760,
+    "deletions": 3,
+    "changed_files": 11,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "e98892b9e56958aff326bd3020de5ac1afc97ba4",
+        "committed_at": "2026-05-22T15:04:02Z"
+      },
+      {
+        "sha": "00802fa692be7ba2c5c791855c83913716243075",
+        "committed_at": "2026-05-22T17:29:02Z"
+      },
+      {
+        "sha": "fbef4bb17b54efa878813a7ddf3452a33d6655d6",
+        "committed_at": "2026-05-22T17:33:28Z"
+      },
+      {
+        "sha": "c9fd588331d53f022bcb64b734585dc5179678f6",
+        "committed_at": "2026-05-26T21:55:24Z"
+      },
+      {
+        "sha": "415121ea30d79589eda7be182b492854f6022a1e",
+        "committed_at": "2026-05-26T21:57:51Z"
+      },
+      {
+        "sha": "130c966a42e26570e5139010d0a26bf8deaa8102",
+        "committed_at": "2026-06-01T21:31:56Z"
+      },
+      {
+        "sha": "98326bd5734ecdb7bb88a394e64f424f37507008",
+        "committed_at": "2026-06-01T21:48:31Z"
+      },
+      {
+        "sha": "0949e56d1e35be525d656c668e34e85878b6010f",
+        "committed_at": "2026-06-01T22:23:13Z"
+      },
+      {
+        "sha": "aa915a0212a7f065da1bd6dd6406d8846fa53063",
+        "committed_at": "2026-06-01T22:26:31Z"
+      },
+      {
+        "sha": "8d4e5d68e8e5f07daae43a0b04065e79fa760ff9",
+        "committed_at": "2026-06-01T22:27:54Z"
+      },
+      {
+        "sha": "72a49b67ff2e8b69a348828418bd15e0377d78c0",
+        "committed_at": "2026-06-01T22:36:55Z"
+      },
+      {
+        "sha": "960b4ca0234ee4ad57c0ce9e17a0d135d6922eda",
+        "committed_at": "2026-06-01T22:40:53Z"
+      },
+      {
+        "sha": "61709075b0d47a62d04a109144b133367f388773",
+        "committed_at": "2026-06-01T22:44:25Z"
+      },
+      {
+        "sha": "de506c9af50f81856756de60583345d191c64660",
+        "committed_at": "2026-06-01T22:51:46Z"
+      },
+      {
+        "sha": "11721cc08adfcc9eeb29e46dd5b60cfa85ce08f1",
+        "committed_at": "2026-06-01T23:24:41Z"
+      },
+      {
+        "sha": "64b6b6010ffa0add273acf451a070cd0ce205ed4",
+        "committed_at": "2026-06-01T23:29:44Z"
+      },
+      {
+        "sha": "ebe269e57f65131a375d80157082821d8d56c640",
+        "committed_at": "2026-06-02T05:50:56Z"
+      },
+      {
+        "sha": "a75dc0cfa76c4ba4fa6afa7e85a5da7ea9a11ebf",
+        "committed_at": "2026-06-02T05:53:13Z"
+      },
+      {
+        "sha": "baa3cf206e21dd26cad6f3ae054bfdaec8a8e064",
+        "committed_at": "2026-06-02T05:55:10Z"
+      },
+      {
+        "sha": "2130ef6c7b6ab820ccfb093bd052905b81fa90e6",
+        "committed_at": "2026-06-02T05:57:04Z"
+      },
+      {
+        "sha": "5ebdc0dc1c0356f43f1dbbb7a15f964c9b5399bf",
+        "committed_at": "2026-06-02T06:03:56Z"
+      },
+      {
+        "sha": "55edff4f7233722bcc6ef6cc21639406a87b5e30",
+        "committed_at": "2026-06-02T06:11:31Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 5893,
+    "title": "Homepage: Add \"What's New\" changelog module",
+    "head_ref": "ramsescab/issue-5796-homepage-add-changelog-what-s-new-module-625bd8",
+    "base_ref": "main",
+    "user_login": "ramsescab",
+    "created_at": "2026-05-29T02:16:47Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 768,
+    "deletions": 0,
+    "changed_files": 5,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "c6de4179ce2af4630ae29d007403fc27c54856f9",
+        "committed_at": "2026-05-28T13:13:29Z"
+      },
+      {
+        "sha": "ce2e96dd509e1a4416dc492dc54376496330ebc6",
+        "committed_at": "2026-05-28T13:25:36Z"
+      },
+      {
+        "sha": "d5499169fa0ce3ecb41f22c4e49b147b9330ff54",
+        "committed_at": "2026-05-28T13:29:42Z"
+      },
+      {
+        "sha": "d4a3645e84a8bbc26229ecf035d8e05ef43fdc19",
+        "committed_at": "2026-05-28T13:32:18Z"
+      },
+      {
+        "sha": "27f4334de93eed55f7d48a5d61046ed760b59af2",
+        "committed_at": "2026-05-28T13:40:04Z"
+      },
+      {
+        "sha": "fa1b006d07926531b8df46b02d817118f9696bdc",
+        "committed_at": "2026-05-28T13:45:37Z"
+      },
+      {
+        "sha": "e7a2d38fe5cb66af6de7751db5d9c3ae7f14439b",
+        "committed_at": "2026-05-28T13:46:52Z"
+      },
+      {
+        "sha": "2bde859e3dfd9026a0dc6ea0839bbb46fff18b9b",
+        "committed_at": "2026-05-28T13:49:31Z"
+      },
+      {
+        "sha": "f8a0e906e03a36fdfdd8502c18812b59528b60b4",
+        "committed_at": "2026-05-28T13:52:58Z"
+      },
+      {
+        "sha": "28368c65e7948c8d0a51aa221bc771470fe117bd",
+        "committed_at": "2026-05-28T13:54:58Z"
+      },
+      {
+        "sha": "11dd7111d7e28d2e19b90443551fefeb0f5079f1",
+        "committed_at": "2026-05-28T13:57:22Z"
+      },
+      {
+        "sha": "70811de557e16a74e5374ad119550ee6a2cfaab0",
+        "committed_at": "2026-05-28T13:58:58Z"
+      },
+      {
+        "sha": "d80c94abe36aaff84bd2341e9f3c244fa6501f94",
+        "committed_at": "2026-05-28T13:59:54Z"
+      },
+      {
+        "sha": "238eddcb6c124766203ce4ce89ac141282d24cc4",
+        "committed_at": "2026-05-28T14:02:41Z"
+      },
+      {
+        "sha": "6a4c5d136738d29cd8e831d441f74426aaa97ac9",
+        "committed_at": "2026-05-28T14:05:03Z"
+      },
+      {
+        "sha": "2d0f16122eef9ce29c357e4a58742781841c931f",
+        "committed_at": "2026-05-28T14:06:59Z"
+      },
+      {
+        "sha": "393aa3e3cdaace80be7d76b7c674dcafbd7eaaa3",
+        "committed_at": "2026-05-28T14:09:33Z"
+      },
+      {
+        "sha": "7d67903c80a0cfecee2348f793a4d5cb8dbb3796",
+        "committed_at": "2026-05-28T14:11:19Z"
+      },
+      {
+        "sha": "eb1acbc71725df8e240fc9491f2973f0c6e01f5f",
+        "committed_at": "2026-05-28T15:00:19Z"
+      },
+      {
+        "sha": "6ef6fbd7dd34ef83658fd21ed0103dc79ddb4f3d",
+        "committed_at": "2026-05-28T15:01:50Z"
+      },
+      {
+        "sha": "7bfc9497006ebbacc7d1746fa245dd4103ad962e",
+        "committed_at": "2026-05-28T15:04:58Z"
+      },
+      {
+        "sha": "3bdbb34def5dada83bfeef5a3e15f862a6f07908",
+        "committed_at": "2026-05-28T15:06:35Z"
+      },
+      {
+        "sha": "2a2bf3746be0694ea046fbcb61d4ac4375ad3b51",
+        "committed_at": "2026-05-28T15:16:13Z"
+      },
+      {
+        "sha": "668a196c3c024c688d320a08660d64364da95f70",
+        "committed_at": "2026-05-28T15:31:14Z"
+      },
+      {
+        "sha": "d6c963e84ee2ffa434a6c60d5edb91a77921a9c7",
+        "committed_at": "2026-05-28T15:48:04Z"
+      },
+      {
+        "sha": "64361a528ec9e758fbaf0af7a9ed9b155697470b",
+        "committed_at": "2026-05-29T01:16:42Z"
+      },
+      {
+        "sha": "8337ed4dd78782f6e5de05f1b7b8025003029db0",
+        "committed_at": "2026-05-29T01:24:44Z"
+      },
+      {
+        "sha": "c627380f38a5fec80c775244f9b69eccc3534469",
+        "committed_at": "2026-05-29T01:26:45Z"
+      },
+      {
+        "sha": "3cbf2f145e057a55561ff43fead360ea553bbf6b",
+        "committed_at": "2026-05-29T01:27:54Z"
+      },
+      {
+        "sha": "b49c9ca507f06bdb4f6e55635a6c31ed35bb2c2c",
+        "committed_at": "2026-05-29T01:29:21Z"
+      },
+      {
+        "sha": "5a066e026a284e25e7563981eedd0f3116956a61",
+        "committed_at": "2026-05-29T01:32:21Z"
+      },
+      {
+        "sha": "e4012676a44c4ab8f09b035bff271a08db3180ec",
+        "committed_at": "2026-05-29T01:33:54Z"
+      },
+      {
+        "sha": "4507aee403b4a1650ef18811a8f65e32c461361c",
+        "committed_at": "2026-05-29T01:36:40Z"
+      },
+      {
+        "sha": "070d5dd29e495b87a0266cd9136603e387907e4b",
+        "committed_at": "2026-05-29T01:37:17Z"
+      },
+      {
+        "sha": "a383c78e40f260247147db1f90b33027009d5114",
+        "committed_at": "2026-05-29T01:38:35Z"
+      },
+      {
+        "sha": "2bd477cc645c1cf13495ecf3456ecc5b162318ae",
+        "committed_at": "2026-05-29T01:43:50Z"
+      },
+      {
+        "sha": "2b3e410e88c2f2d08f11799fa23496398875cc5f",
+        "committed_at": "2026-05-29T01:46:26Z"
+      },
+      {
+        "sha": "253fdf7153f847c8ce516418b84d31436a72140d",
+        "committed_at": "2026-05-29T01:49:26Z"
+      },
+      {
+        "sha": "8eca6da493bcde365fe1366d43d6ccf957519668",
+        "committed_at": "2026-05-29T01:50:49Z"
+      },
+      {
+        "sha": "7099b922fe88e0976302798a8b707e8a444703b3",
+        "committed_at": "2026-05-29T01:54:48Z"
+      },
+      {
+        "sha": "08b6bed6ea94363698fd46207bb7c69b8bb42e5e",
+        "committed_at": "2026-05-29T01:56:12Z"
+      },
+      {
+        "sha": "68f85aceb3f05f8cede2f345984014051527fc1e",
+        "committed_at": "2026-05-29T02:02:40Z"
+      },
+      {
+        "sha": "0af811f1c810ceba3cea08fa3abb29ead211067b",
+        "committed_at": "2026-05-29T02:07:26Z"
+      },
+      {
+        "sha": "bd87f7f0baeffd49310131c7db1d7fede1df8e12",
+        "committed_at": "2026-05-29T02:09:02Z"
+      },
+      {
+        "sha": "a926dfece98485d224a04baa5447fc74c1574190",
+        "committed_at": "2026-05-29T02:09:18Z"
+      },
+      {
+        "sha": "4b520b1f5cb8e5789bf14326636f9d982c79dd2a",
+        "committed_at": "2026-05-29T02:11:06Z"
+      },
+      {
+        "sha": "037ecefaf790c49eb9d34962113172b35f34de87",
+        "committed_at": "2026-05-29T02:13:57Z"
+      },
+      {
+        "sha": "4907e22cd44110dda5aedff7a5cf9a36faa17b8c",
+        "committed_at": "2026-05-29T02:14:41Z"
+      },
+      {
+        "sha": "70200c65b5a27c3dfa1f55b0cddabe563e51aa47",
+        "committed_at": "2026-05-29T02:18:14Z"
+      },
+      {
+        "sha": "6f4bdb6839fccad21ae639cd48534443181e1aa1",
+        "committed_at": "2026-06-02T06:27:52Z"
+      },
+      {
+        "sha": "61d7f450a5c9815f117fe73551e7c6ededb75896",
+        "committed_at": "2026-06-02T06:29:26Z"
+      },
+      {
+        "sha": "d47fe39bf0c1613a1b112e5ed4d1d6c98fd45d04",
+        "committed_at": "2026-06-02T06:40:58Z"
+      },
+      {
+        "sha": "bbd6d486c63d5568cf0358bfe6008c82070f25a6",
+        "committed_at": "2026-06-02T06:46:01Z"
+      },
+      {
+        "sha": "efb0af5ab57d023e371f1f740dbd246d149be4f3",
+        "committed_at": "2026-06-02T07:37:37Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6001,
+    "title": "[Agent plan] React performance guardrails & incremental wins",
+    "head_ref": "tclem/react-performance-audit",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-05-30T17:22:29Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 1859,
+    "deletions": 0,
+    "changed_files": 12,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "5dc8583d15c293edc72c1d661f31caacbb5b442e",
+        "committed_at": "2026-05-30T17:21:55Z"
+      },
+      {
+        "sha": "1458a92c5b8cb418a73053e8e6cbcc1c45313eef",
+        "committed_at": "2026-05-30T17:29:24Z"
+      },
+      {
+        "sha": "83f048ed223d623a8314b493d5574ec40439fe32",
+        "committed_at": "2026-05-30T17:31:00Z"
+      },
+      {
+        "sha": "7452815d5fc17944f04158a3bd34b6d1a45deb66",
+        "committed_at": "2026-05-30T17:32:44Z"
+      },
+      {
+        "sha": "671aa72d8dd9a31f0f5c6b11d7766d7120a142ae",
+        "committed_at": "2026-05-30T17:41:35Z"
+      },
+      {
+        "sha": "c277b35bea261ea4d8a70399a827055e72050c93",
+        "committed_at": "2026-05-30T18:12:25Z"
+      },
+      {
+        "sha": "c359ae2faa4a8f0469836d5788e4eee058a85dd4",
+        "committed_at": "2026-05-30T18:20:34Z"
+      },
+      {
+        "sha": "d6ba025a8e5b77697d2c481f12d329f6170d7a71",
+        "committed_at": "2026-05-30T19:24:09Z"
+      },
+      {
+        "sha": "36a6189be4b96e82b04c5f4ea4cede445c16f964",
+        "committed_at": "2026-05-31T00:04:18Z"
+      },
+      {
+        "sha": "cd26be0894a1bc27075e516041fa360d8d9d2ad3",
+        "committed_at": "2026-05-31T00:08:41Z"
+      },
+      {
+        "sha": "1dd3b79a0aa05dfff5e8b6f273a07acce6cba2bf",
+        "committed_at": "2026-05-31T00:23:35Z"
+      },
+      {
+        "sha": "521aae35d4fd97b93b99e75a1f8a922cdf91b2de",
+        "committed_at": "2026-05-31T00:46:32Z"
+      },
+      {
+        "sha": "d814a557beff14ed77f8648486c3d7253e13dfad",
+        "committed_at": "2026-05-31T02:33:33Z"
+      },
+      {
+        "sha": "7f69b7141248e6cedca31a6c5c7814447626af61",
+        "committed_at": "2026-05-31T02:38:35Z"
+      },
+      {
+        "sha": "269fe35d1e0b0800487a377785d74025114a69e1",
+        "committed_at": "2026-06-01T15:59:38Z"
+      },
+      {
+        "sha": "09fd765efed556d1cd9d189d5d5a4b4d8681424d",
+        "committed_at": "2026-06-01T16:46:41Z"
+      },
+      {
+        "sha": "913b1d4cc4fbd4ee8a9fda6d7ca777cf2270c9e8",
+        "committed_at": "2026-06-01T16:51:12Z"
+      },
+      {
+        "sha": "8d6625d719e988b907411553fd4d7796375ccbb0",
+        "committed_at": "2026-06-01T17:50:53Z"
+      },
+      {
+        "sha": "1a67db95fd7d96eaf1e29595fa0ae3f3572b05ef",
+        "committed_at": "2026-06-01T18:41:38Z"
+      },
+      {
+        "sha": "dc9b5a60679f2ff0f95691c6cdad5709feb8bec5",
+        "committed_at": "2026-06-01T19:02:31Z"
+      },
+      {
+        "sha": "660712a1efe91a30153bb29a916b2e47a43ae270",
+        "committed_at": "2026-06-01T19:46:13Z"
+      },
+      {
+        "sha": "4a2b60311c13aa9e04ba2decb6ab273187517347",
+        "committed_at": "2026-06-01T19:55:24Z"
+      },
+      {
+        "sha": "064ad3231fd6da6f017c55e3f55affe01fe144a2",
+        "committed_at": "2026-06-01T21:50:04Z"
+      },
+      {
+        "sha": "a4f9ee45a8714101ce42fc80d72aa1e4b2817bc5",
+        "committed_at": "2026-06-02T03:53:20Z"
+      },
+      {
+        "sha": "b4d431c5345c72d3f99e5f3dd16432c38fd3d813",
+        "committed_at": "2026-06-02T05:27:37Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6025,
+    "title": "Drop per-session channel backlog on suspend, jump to latest",
+    "head_ref": "tclem/drop-channel-backlog-on-suspend",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-05-31T02:26:02Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 830,
+    "deletions": 0,
+    "changed_files": 5,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "542827f9a4e33279ccc76445be5066f060c24518",
+        "committed_at": "2026-05-31T02:24:49Z"
+      },
+      {
+        "sha": "8dd30a0a23334d25afb3baa66941e41800965485",
+        "committed_at": "2026-05-31T06:04:29Z"
+      },
+      {
+        "sha": "5b77652124ca4acc128f3690dbc3d09bf3923edc",
+        "committed_at": "2026-06-02T05:18:53Z"
+      },
+      {
+        "sha": "e9ef85e9c9d923e2ce416f82c8a63ceecef0bf98",
+        "committed_at": "2026-06-02T05:28:06Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6052,
+    "title": "Native Office canvases: Word, PowerPoint, Excel",
+    "head_ref": "evanboyle/office-canvases",
+    "base_ref": "main",
+    "user_login": "EvanBoyle",
+    "created_at": "2026-05-31T23:53:18Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 79542,
+    "deletions": 63,
+    "changed_files": 260,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "d98d92787fa9a6b430c6a9e2e812ab10a3c4ae9b",
+        "committed_at": "2026-05-29T05:14:53Z"
+      },
+      {
+        "sha": "bf6a03a57eb56c12bb1ce398cca80824fb4bc47d",
+        "committed_at": "2026-05-29T05:33:05Z"
+      },
+      {
+        "sha": "986265f21dcc3f0b08e6a3504f51d38f0d300e2d",
+        "committed_at": "2026-05-29T06:05:06Z"
+      },
+      {
+        "sha": "e4103eed14d12f19eab6048ecde6484d74674bab",
+        "committed_at": "2026-05-29T06:08:38Z"
+      },
+      {
+        "sha": "eecaed1e81d24be735bb5fa2a61d87fcf5e777cc",
+        "committed_at": "2026-05-29T06:11:46Z"
+      },
+      {
+        "sha": "0be489ac3c27cc0fa6ecfed26d6c96366334ee9c",
+        "committed_at": "2026-05-29T06:25:28Z"
+      },
+      {
+        "sha": "0102241f33b74cb0c391a72383c956dee116210d",
+        "committed_at": "2026-05-29T06:41:24Z"
+      },
+      {
+        "sha": "48523bbd6446fe72d5d8850e2a8b9273f5de2ee3",
+        "committed_at": "2026-05-29T06:48:45Z"
+      },
+      {
+        "sha": "63ee6e4b59889efb95c6465286c395537adf6d52",
+        "committed_at": "2026-05-29T06:58:50Z"
+      },
+      {
+        "sha": "78d4674ede8bbf22edf7ba6fed8185fcc1abec49",
+        "committed_at": "2026-05-29T07:16:18Z"
+      },
+      {
+        "sha": "43765166ce43d8f9be1801375baae2914c9a9112",
+        "committed_at": "2026-05-29T07:35:03Z"
+      },
+      {
+        "sha": "e7e89cf890fdf902f6acedd7a334c8c9772cf258",
+        "committed_at": "2026-05-29T07:44:28Z"
+      },
+      {
+        "sha": "9d8152768fac4077ca277c847dc9705dbb771945",
+        "committed_at": "2026-05-29T07:54:55Z"
+      },
+      {
+        "sha": "83684899374d5a0fe81dcc99197d8539cf8c99a2",
+        "committed_at": "2026-05-29T07:57:08Z"
+      },
+      {
+        "sha": "eadbbf6e91bf9897f196af02eeddf32cc7a3fbf8",
+        "committed_at": "2026-05-29T08:03:13Z"
+      },
+      {
+        "sha": "b88cd5565942539dba179411d93c9048cf9356e1",
+        "committed_at": "2026-05-29T08:13:35Z"
+      },
+      {
+        "sha": "101bc8a5df65bd3e4f88fc3b2036fba1fd290869",
+        "committed_at": "2026-05-29T08:19:03Z"
+      },
+      {
+        "sha": "bea893bb9d50400b0e355d389a6f9bd7427a97ca",
+        "committed_at": "2026-05-29T08:25:06Z"
+      },
+      {
+        "sha": "91b65ba8497106a6505455847507570781a6e91b",
+        "committed_at": "2026-05-29T08:29:47Z"
+      },
+      {
+        "sha": "da567c097703ee37e932556518c67bbde6f2fb1a",
+        "committed_at": "2026-05-29T08:41:58Z"
+      },
+      {
+        "sha": "9a1ea9ecce4dbd9381f6ae8ccbb395f2ba5cffcf",
+        "committed_at": "2026-05-29T08:46:18Z"
+      },
+      {
+        "sha": "222525205f4e06040eaad58a5e951a767da28937",
+        "committed_at": "2026-05-29T08:52:13Z"
+      },
+      {
+        "sha": "a9007605f26fd69fa678b2114b72a76c1f9b28f1",
+        "committed_at": "2026-05-29T08:57:29Z"
+      },
+      {
+        "sha": "ced6d964a76063221abff06593747e751581634a",
+        "committed_at": "2026-05-29T09:02:51Z"
+      },
+      {
+        "sha": "3efb9d8802f99cdef5b3221a26bdfbb7493d8b4b",
+        "committed_at": "2026-05-29T09:12:07Z"
+      },
+      {
+        "sha": "bf86431158fe6af56aa6f55696e8ae51c50edaa6",
+        "committed_at": "2026-05-29T09:17:29Z"
+      },
+      {
+        "sha": "0905945a619904fc064c58b7ac102d6c56a4d84d",
+        "committed_at": "2026-05-29T09:48:00Z"
+      },
+      {
+        "sha": "70cae37d893c035e075c3b54d27cb4c55165ea0f",
+        "committed_at": "2026-05-29T09:57:08Z"
+      },
+      {
+        "sha": "2ba2f3706c7cde74c62e369bc8468601cd1d6ee0",
+        "committed_at": "2026-05-29T10:01:19Z"
+      },
+      {
+        "sha": "2904483a899c4eaf55bd4b7e4f8f683e0ed4fbff",
+        "committed_at": "2026-05-29T10:04:13Z"
+      },
+      {
+        "sha": "6bd1b27f6f87dd5536cca3eb51da0d2886217c7f",
+        "committed_at": "2026-05-29T10:14:32Z"
+      },
+      {
+        "sha": "4194c3d45e62d48e1b150054f2e6117804eb6fcd",
+        "committed_at": "2026-05-29T10:18:46Z"
+      },
+      {
+        "sha": "f37eafd331593dc28c135a8e67a8fd23e3fe322c",
+        "committed_at": "2026-05-29T10:24:11Z"
+      },
+      {
+        "sha": "951da250ed8a3771d6855f19b9d3b5876825b3c6",
+        "committed_at": "2026-05-29T10:27:55Z"
+      },
+      {
+        "sha": "76fbaa7eca93b62ad963010fc1f18f8c8c06b7a0",
+        "committed_at": "2026-05-29T10:35:52Z"
+      },
+      {
+        "sha": "60667bea97a7cb51c3e656b5220470c21547d7bc",
+        "committed_at": "2026-05-29T10:41:22Z"
+      },
+      {
+        "sha": "c91e89b6d5e42b4d402b9ec0096bf9f3bb607090",
+        "committed_at": "2026-05-29T10:46:36Z"
+      },
+      {
+        "sha": "74eb024e35aa7486be1165e54db5f019a336e188",
+        "committed_at": "2026-05-29T10:51:25Z"
+      },
+      {
+        "sha": "e35951ff40c13fcf166cd2e50c9b0807517ce30a",
+        "committed_at": "2026-05-29T11:15:34Z"
+      },
+      {
+        "sha": "eea6e3f5e3e414db595d19d15dcb5f2a212aa700",
+        "committed_at": "2026-05-29T15:36:08Z"
+      },
+      {
+        "sha": "d3e36efd33f5d79c2dbd4edf8e2c1f0823fba7e0",
+        "committed_at": "2026-05-30T01:42:27Z"
+      },
+      {
+        "sha": "f01e84597d083afbf1b273716369a8882f4e6c81",
+        "committed_at": "2026-05-30T01:45:53Z"
+      },
+      {
+        "sha": "84c082fca24719ba7ab7cf791525ca135c8d65e4",
+        "committed_at": "2026-05-30T01:48:37Z"
+      },
+      {
+        "sha": "e166f3ce1e1e22e44c8534572fde562e5c5635e7",
+        "committed_at": "2026-05-30T01:52:13Z"
+      },
+      {
+        "sha": "522c40c5a642eaa12c4747385317ca7a8468ce01",
+        "committed_at": "2026-05-30T01:54:19Z"
+      },
+      {
+        "sha": "1d32fdb3eb067fb688281108a85ed186c5f9ed3c",
+        "committed_at": "2026-05-30T02:00:00Z"
+      },
+      {
+        "sha": "b5cba35c582ae9b3e21862ea37754f6c1bf469ce",
+        "committed_at": "2026-05-30T02:03:52Z"
+      },
+      {
+        "sha": "d7db3d894529ad16b9afcc922d7cf0adf36015f5",
+        "committed_at": "2026-05-30T02:09:00Z"
+      },
+      {
+        "sha": "6d3bf85c3c1c90a64d1c5c72df920588fe7dbc8c",
+        "committed_at": "2026-05-30T02:11:52Z"
+      },
+      {
+        "sha": "eb157615318435da31989a6660456b3fa98d37a7",
+        "committed_at": "2026-05-30T02:15:52Z"
+      },
+      {
+        "sha": "87cc29bb180f26bcc65e6da830555d1562df5b93",
+        "committed_at": "2026-05-30T02:39:03Z"
+      },
+      {
+        "sha": "6e6b738928287bc5c2d2c277e8a98f8a1ecf0b55",
+        "committed_at": "2026-05-30T03:15:28Z"
+      },
+      {
+        "sha": "0f214026f623ae2b58e23d386b721211f38dda43",
+        "committed_at": "2026-05-30T03:29:13Z"
+      },
+      {
+        "sha": "6a0c39cc8acfa2aceb937552c0049cae74c83a35",
+        "committed_at": "2026-05-30T03:42:11Z"
+      },
+      {
+        "sha": "61e47d8224c9fd4c16b58f6eb093da5410259219",
+        "committed_at": "2026-05-30T03:46:15Z"
+      },
+      {
+        "sha": "ff48bf072a48b3fd1271aa48b8ae268790241564",
+        "committed_at": "2026-05-30T04:06:38Z"
+      },
+      {
+        "sha": "2889a7d3fe84ad0a0f32e5b0be5f2ac7eb34e155",
+        "committed_at": "2026-05-30T04:11:57Z"
+      },
+      {
+        "sha": "9d8bde4f9256f8bf656e8c7f828e4c3fa74af6ed",
+        "committed_at": "2026-05-30T04:18:08Z"
+      },
+      {
+        "sha": "7a79cd228f6736c567aa696452f7ce2f56fc03ba",
+        "committed_at": "2026-05-30T04:20:45Z"
+      },
+      {
+        "sha": "6ac203b6134a258979bb1feee8bfc75227980a5b",
+        "committed_at": "2026-05-30T04:48:37Z"
+      },
+      {
+        "sha": "13ee63c71551c267272bc9828c09cbcf7fa54321",
+        "committed_at": "2026-05-30T04:55:16Z"
+      },
+      {
+        "sha": "63225d0c0bf65a494807c82f8c826d930bc696ae",
+        "committed_at": "2026-05-30T04:59:52Z"
+      },
+      {
+        "sha": "643c75e0f198354946a159eb923bd0ac73328e7e",
+        "committed_at": "2026-05-30T05:01:01Z"
+      },
+      {
+        "sha": "5c8509212e7eefd148608b72600483b2f40af5fc",
+        "committed_at": "2026-05-30T05:03:18Z"
+      },
+      {
+        "sha": "8cfcb2c176a40502c35878801c1b35f9dab3f612",
+        "committed_at": "2026-05-30T05:08:13Z"
+      },
+      {
+        "sha": "dd7a745583477b45a777c9ecfaed2b8062945efe",
+        "committed_at": "2026-05-30T05:13:30Z"
+      },
+      {
+        "sha": "7c14f563d08039fe52b81892660955ffa83f99d6",
+        "committed_at": "2026-05-30T05:17:07Z"
+      },
+      {
+        "sha": "99595d1e75b55ef9c5b1e09d747988c3275d8738",
+        "committed_at": "2026-05-30T05:19:25Z"
+      },
+      {
+        "sha": "719e3778c62a763954236f94c89f1252c9c9a890",
+        "committed_at": "2026-05-30T05:23:04Z"
+      },
+      {
+        "sha": "ccbfa665c4d75e1dc9e563ff5f4358c74b42c9c6",
+        "committed_at": "2026-05-30T05:25:33Z"
+      },
+      {
+        "sha": "8e8f7087222f622874be05c5f80ad7d1c81ad947",
+        "committed_at": "2026-05-30T05:31:07Z"
+      },
+      {
+        "sha": "2a0f38dc96c5d496ba5b24ee288e1c1eaf5e85ce",
+        "committed_at": "2026-05-30T05:33:40Z"
+      },
+      {
+        "sha": "d7639627b4565aed82c670d418da59df5d806911",
+        "committed_at": "2026-05-30T05:36:41Z"
+      },
+      {
+        "sha": "c1dc0b5c00ec60ab20a03a580a1b5b54a28d5637",
+        "committed_at": "2026-05-30T05:46:25Z"
+      },
+      {
+        "sha": "01637bada4b3832584b5dc2cd8108143369dd45d",
+        "committed_at": "2026-05-30T05:47:38Z"
+      },
+      {
+        "sha": "d588b4a7a4060733d6db8061fcdbbec1d7c3bd0a",
+        "committed_at": "2026-05-30T05:52:42Z"
+      },
+      {
+        "sha": "4bb9e7ff149e013c700e321ff8db227434f25fe5",
+        "committed_at": "2026-05-30T05:54:26Z"
+      },
+      {
+        "sha": "9f9de7f8fae36a3ee0b1fa6651f934697b784dd1",
+        "committed_at": "2026-05-30T05:56:42Z"
+      },
+      {
+        "sha": "bf0e236f7d3761ae0c7d5827c126781c42aeb870",
+        "committed_at": "2026-05-30T05:59:47Z"
+      },
+      {
+        "sha": "6063d57eab090fd4d8fe8afb88817e849be53dcb",
+        "committed_at": "2026-05-30T06:21:45Z"
+      },
+      {
+        "sha": "c5dc34d73506ea872332eece5a0316f1f6256c17",
+        "committed_at": "2026-05-30T06:28:29Z"
+      },
+      {
+        "sha": "fe9f5630f9e4948f1d2d5cfcf3f9f29755345846",
+        "committed_at": "2026-05-30T06:32:47Z"
+      },
+      {
+        "sha": "82ad5f61e155ba0bb0b1517880346fa8d6b4b0fd",
+        "committed_at": "2026-05-30T06:38:50Z"
+      },
+      {
+        "sha": "1c34926124c0a17d51b89803d68a76d473914887",
+        "committed_at": "2026-05-30T06:41:27Z"
+      },
+      {
+        "sha": "f4782d67109b5d218f1163247ba8562fe9f54e27",
+        "committed_at": "2026-05-30T06:48:17Z"
+      },
+      {
+        "sha": "086809a72c87e2bfe30b313deda1e6cb3c5c6ae4",
+        "committed_at": "2026-05-30T06:52:19Z"
+      },
+      {
+        "sha": "86edea40c51afaf4ddeb05f2525903c524a67eaa",
+        "committed_at": "2026-05-30T07:00:11Z"
+      },
+      {
+        "sha": "51d0836a5b3298de9c71c1243d9d1643ba4a161a",
+        "committed_at": "2026-05-30T07:08:38Z"
+      },
+      {
+        "sha": "9720810de714814b1df7da8ef97e09c05425a4a0",
+        "committed_at": "2026-05-30T07:14:55Z"
+      },
+      {
+        "sha": "945afb59fb5855c68beeb4325cb0a4279d636d52",
+        "committed_at": "2026-05-30T07:25:11Z"
+      },
+      {
+        "sha": "d176d7ff13eced788eb31c7b9687e04ef95947f6",
+        "committed_at": "2026-05-30T07:32:13Z"
+      },
+      {
+        "sha": "f2c630031c5c7df49ac37bddb02be718167ae4f1",
+        "committed_at": "2026-05-30T07:38:59Z"
+      },
+      {
+        "sha": "b9b5b67b51777f2f1335d303ad6a0233e6a93be2",
+        "committed_at": "2026-05-30T07:45:29Z"
+      },
+      {
+        "sha": "e8c4adccceb5786bb0b2bfa7009a6db136515fdd",
+        "committed_at": "2026-05-30T07:50:35Z"
+      },
+      {
+        "sha": "3717db1f545165fcb816ab614305db0594ccf90d",
+        "committed_at": "2026-05-30T08:00:48Z"
+      },
+      {
+        "sha": "8c71e0a03a34d26f7ec1ff389bad454d4113cf54",
+        "committed_at": "2026-05-30T08:05:48Z"
+      },
+      {
+        "sha": "95011f1b60cfeec9ae194bc7d79f607d60d52b52",
+        "committed_at": "2026-05-30T08:09:13Z"
+      },
+      {
+        "sha": "5dbd9de7de4e36b03cd6832cec47c3782b483338",
+        "committed_at": "2026-05-30T08:10:20Z"
+      },
+      {
+        "sha": "1191fe92f32276514c74885c09aa2fca6c9e8837",
+        "committed_at": "2026-05-30T08:15:42Z"
+      },
+      {
+        "sha": "5191da6181e8413c0f5b5d463b85b29fd5e355be",
+        "committed_at": "2026-05-30T08:18:22Z"
+      },
+      {
+        "sha": "2687b1f385ec45cdceee276650b67bb81667a64f",
+        "committed_at": "2026-05-30T08:22:07Z"
+      },
+      {
+        "sha": "492ed9e57f14f98406e0a5f86f7b8ebfe3cbaf8e",
+        "committed_at": "2026-05-30T08:24:36Z"
+      },
+      {
+        "sha": "401d934c6c67663f92a314a2cefe11b5af74851a",
+        "committed_at": "2026-05-30T08:26:06Z"
+      },
+      {
+        "sha": "7e49f08c00146f80d986cce2338cfcead8e77379",
+        "committed_at": "2026-05-30T08:33:43Z"
+      },
+      {
+        "sha": "4edb78c3c18a460e2360ae16d8c246a8ba62f49c",
+        "committed_at": "2026-05-30T08:40:37Z"
+      },
+      {
+        "sha": "52e3faad673fa694454da79fcdf3ac8a44580597",
+        "committed_at": "2026-05-30T08:46:02Z"
+      },
+      {
+        "sha": "c0df112f3d23f0366ae4fc05c71cbe9d534ea660",
+        "committed_at": "2026-05-30T08:48:44Z"
+      },
+      {
+        "sha": "ceaca7d7ace18a711fcfcdc20a7618a58bd5ceef",
+        "committed_at": "2026-05-30T08:50:16Z"
+      },
+      {
+        "sha": "f1c86b6384679106d60b5de20a282b8fdca61260",
+        "committed_at": "2026-05-30T08:53:59Z"
+      },
+      {
+        "sha": "f0a70dd66bca93c7c501e2814ebe6de6300c9c1f",
+        "committed_at": "2026-05-30T09:03:23Z"
+      },
+      {
+        "sha": "1170865e9d991f06c6e709ce275b00a88587850f",
+        "committed_at": "2026-05-30T09:06:04Z"
+      },
+      {
+        "sha": "4091fb61472d6396ed27683473ea587899117266",
+        "committed_at": "2026-05-30T09:13:38Z"
+      },
+      {
+        "sha": "78b7ac10ce91d32b6f91a2731e53ec2635b2886e",
+        "committed_at": "2026-05-30T09:25:02Z"
+      },
+      {
+        "sha": "9b9e05b72ea4ed816275bd15b19cc0ce23b2bab0",
+        "committed_at": "2026-05-30T09:29:17Z"
+      },
+      {
+        "sha": "57a8255ce01a773013a16e8567555435979edba3",
+        "committed_at": "2026-05-30T09:41:21Z"
+      },
+      {
+        "sha": "831b39e7d3611fd9608f104f18d530d250a698b8",
+        "committed_at": "2026-05-30T09:46:30Z"
+      },
+      {
+        "sha": "8b53a7ea41cb57d1cb67085a4a893fbfe5526b02",
+        "committed_at": "2026-05-30T10:58:06Z"
+      },
+      {
+        "sha": "cd63a92590a4f892527a99bf4db410bb5956085e",
+        "committed_at": "2026-05-30T11:21:36Z"
+      },
+      {
+        "sha": "909fa1730066d161cae89c8142ae5f249f03b91a",
+        "committed_at": "2026-05-30T11:26:07Z"
+      },
+      {
+        "sha": "71199f23dfd14a9d937cb3449477c0dc4f2a3883",
+        "committed_at": "2026-05-30T11:29:54Z"
+      },
+      {
+        "sha": "0c18960098510859de4bf286f6e6ba881b49d1de",
+        "committed_at": "2026-05-30T11:41:58Z"
+      },
+      {
+        "sha": "6b05b738c40f7c3ceefa4ec1eec2bd3b012e7cc4",
+        "committed_at": "2026-05-30T11:45:42Z"
+      },
+      {
+        "sha": "b473f50f91a8db678631c6fa1acd2adb131beeb3",
+        "committed_at": "2026-05-30T11:52:24Z"
+      },
+      {
+        "sha": "58ed6b315af9e07f336391193f0be6625d66eb22",
+        "committed_at": "2026-05-30T12:01:43Z"
+      },
+      {
+        "sha": "95a7a8155c019b0cafefd5abfe011329e3ac7af9",
+        "committed_at": "2026-05-30T12:08:27Z"
+      },
+      {
+        "sha": "4db2d92372d53a2e9b4b39aa856d578d865120e4",
+        "committed_at": "2026-05-30T12:26:46Z"
+      },
+      {
+        "sha": "c4b08f559ad2ee85b2ddfc0f7d230331560bada4",
+        "committed_at": "2026-05-30T12:38:03Z"
+      },
+      {
+        "sha": "c91e020ef4a383715bca2742d9bf4d63e9c166af",
+        "committed_at": "2026-05-30T12:51:44Z"
+      },
+      {
+        "sha": "3a626eaf55f00ebe0853d8e8edd60b066ac40405",
+        "committed_at": "2026-05-30T13:04:48Z"
+      },
+      {
+        "sha": "888f8db625959be5511c3ecb31db71a6767edf88",
+        "committed_at": "2026-05-30T13:21:46Z"
+      },
+      {
+        "sha": "01990ca121eac4d428e432d6f23cd5efc4ab3c54",
+        "committed_at": "2026-05-30T13:36:42Z"
+      },
+      {
+        "sha": "ffaf1aad387f83ff8693f264bf3de142232fb964",
+        "committed_at": "2026-05-30T13:50:47Z"
+      },
+      {
+        "sha": "ea159251a069fe7ea2fd28c890fa20f03aa2d5a9",
+        "committed_at": "2026-05-30T14:07:26Z"
+      },
+      {
+        "sha": "4184e41bcaf5c36230766827da4f90ef9f7f3a72",
+        "committed_at": "2026-05-30T14:11:19Z"
+      },
+      {
+        "sha": "a88da4d5e6aac5971d1229714c26971da731d2f2",
+        "committed_at": "2026-05-30T14:26:18Z"
+      },
+      {
+        "sha": "7b0ec391cca775fba6317e41838cc5dd884e24be",
+        "committed_at": "2026-05-30T14:34:59Z"
+      },
+      {
+        "sha": "fbb66fe775ada7aa23cc3dc23a774689f30b30fd",
+        "committed_at": "2026-05-30T14:41:59Z"
+      },
+      {
+        "sha": "4d763f883c6531490aef6edbf79323e680831fe4",
+        "committed_at": "2026-05-30T14:50:58Z"
+      },
+      {
+        "sha": "5ac31d124ac785baf60768f9ac800956db2ccadb",
+        "committed_at": "2026-05-30T14:54:58Z"
+      },
+      {
+        "sha": "e84b9dd164af29c1738340ce81560334edf9552d",
+        "committed_at": "2026-05-30T15:10:39Z"
+      },
+      {
+        "sha": "a50de77df5de3668c764b48850034233e3b9f686",
+        "committed_at": "2026-05-30T15:22:03Z"
+      },
+      {
+        "sha": "eb591c92718dfa7f653136d1139c6fd0ed4b2582",
+        "committed_at": "2026-05-30T15:26:19Z"
+      },
+      {
+        "sha": "675a8f9f8acb21b3fd361f58714a3ff76b1a61c1",
+        "committed_at": "2026-05-30T15:29:05Z"
+      },
+      {
+        "sha": "d56e17ee40b0f02a5fb9c888d65ca0662858867e",
+        "committed_at": "2026-05-30T15:32:46Z"
+      },
+      {
+        "sha": "f19c5eb759f9a92a63bc2218b9f407f148922545",
+        "committed_at": "2026-05-30T15:41:37Z"
+      },
+      {
+        "sha": "240ccb8ca7f503526082cb1e96158249169100e8",
+        "committed_at": "2026-05-30T15:57:05Z"
+      },
+      {
+        "sha": "c08c5017cf07f609a2a826d88c291fada3e34684",
+        "committed_at": "2026-05-30T16:13:10Z"
+      },
+      {
+        "sha": "09478e77e7d044d4039ffe57570621d47e255029",
+        "committed_at": "2026-05-30T16:31:15Z"
+      },
+      {
+        "sha": "d7c7ef0720debbacc4a5cdba0d858380cb3a4234",
+        "committed_at": "2026-05-30T17:01:27Z"
+      },
+      {
+        "sha": "8bc51d646ab501b899151720ae907b5811a577e0",
+        "committed_at": "2026-05-30T17:47:14Z"
+      },
+      {
+        "sha": "befd7e3eaaf5594c80fe29f7af4c3f82f62a2902",
+        "committed_at": "2026-05-30T18:00:12Z"
+      },
+      {
+        "sha": "e38f6ee4bab33046f011fa702ba2dce25f7a4b3b",
+        "committed_at": "2026-05-30T18:37:39Z"
+      },
+      {
+        "sha": "6ea20fb0bf2ee595dd515a2efc92c68222dcf0a5",
+        "committed_at": "2026-05-30T18:45:33Z"
+      },
+      {
+        "sha": "00f0a7526160679ae7f222c0f211a078f6588064",
+        "committed_at": "2026-05-30T18:58:51Z"
+      },
+      {
+        "sha": "9233efdd29636783ab3d068e69b8f227fb88a298",
+        "committed_at": "2026-05-30T19:22:13Z"
+      },
+      {
+        "sha": "1fa94d95819f1f8177d3e9baf527e12c67c8edea",
+        "committed_at": "2026-05-30T19:26:02Z"
+      },
+      {
+        "sha": "db9cc6493b7990a89e80c55bdd99db86087a3b34",
+        "committed_at": "2026-05-30T19:29:32Z"
+      },
+      {
+        "sha": "a9ff35d9a33952c9a7dc5b78f5acff0e19a9b74b",
+        "committed_at": "2026-05-30T19:34:49Z"
+      },
+      {
+        "sha": "4883c6e3957c614e2580f268da4959e824d5b2dc",
+        "committed_at": "2026-05-30T19:40:23Z"
+      },
+      {
+        "sha": "5ac564a5a1a7fc95e8a2156544842159138192ae",
+        "committed_at": "2026-05-30T19:45:53Z"
+      },
+      {
+        "sha": "7c4d19e949e445ddcb76cc024787b86e032de290",
+        "committed_at": "2026-05-30T19:50:10Z"
+      },
+      {
+        "sha": "05bd4f6fa330c1122aefa42a831b165b6594aba0",
+        "committed_at": "2026-05-30T19:56:36Z"
+      },
+      {
+        "sha": "ad3af8d667e376fb212f1504f330c0914596938c",
+        "committed_at": "2026-05-30T19:57:43Z"
+      },
+      {
+        "sha": "d61f858d6678b41c097358931330c1e75ab18031",
+        "committed_at": "2026-05-30T20:21:40Z"
+      },
+      {
+        "sha": "2e9433a800d525126484b9428ddf3d19de431aa8",
+        "committed_at": "2026-05-30T20:43:11Z"
+      },
+      {
+        "sha": "19408732556ba679fab6c9c39da8c048d1cd4542",
+        "committed_at": "2026-05-30T20:46:41Z"
+      },
+      {
+        "sha": "db69d41754c49bb5096565f0a2bcf180406ba8dd",
+        "committed_at": "2026-05-30T21:21:26Z"
+      },
+      {
+        "sha": "c225f90355eb01a341780da93d3dbe8e704fd01c",
+        "committed_at": "2026-05-30T21:31:40Z"
+      },
+      {
+        "sha": "9b3ac7f7ed138da5cfe09a3bbc89bb22115ef1c4",
+        "committed_at": "2026-05-30T22:31:09Z"
+      },
+      {
+        "sha": "5c1c87534b9dc07212f401783a3fe0e757a3d0ed",
+        "committed_at": "2026-05-30T22:52:42Z"
+      },
+      {
+        "sha": "d7aed5090100d9a555cccbe2610a44af9e3d83d9",
+        "committed_at": "2026-05-30T23:01:23Z"
+      },
+      {
+        "sha": "739d29acc0487e7b52c7800fd512d85a251b6f41",
+        "committed_at": "2026-05-30T23:03:02Z"
+      },
+      {
+        "sha": "3aeec081d33c9fdf2b28be1705afc49aa9ca5829",
+        "committed_at": "2026-05-30T23:06:28Z"
+      },
+      {
+        "sha": "4ae268b0d433e0af694325ec1b3c19c99291f731",
+        "committed_at": "2026-05-30T23:15:36Z"
+      },
+      {
+        "sha": "b9b36d3e4cc373329ddfaa747b8df8d88f2fd095",
+        "committed_at": "2026-05-30T23:42:07Z"
+      },
+      {
+        "sha": "a77c9063a853794cf05f4fdcaeed9d83dc60916c",
+        "committed_at": "2026-05-31T00:03:47Z"
+      },
+      {
+        "sha": "a156745b304967cc897fd9b785f700cd1aeddcef",
+        "committed_at": "2026-05-31T00:30:53Z"
+      },
+      {
+        "sha": "05ee6d82ce4cf0b0a9af8c09425c83a6e0cce40c",
+        "committed_at": "2026-05-31T00:36:57Z"
+      },
+      {
+        "sha": "cdcc29a4b57f512ee7b83b84bbf8ca7d0c78c60d",
+        "committed_at": "2026-05-31T00:46:30Z"
+      },
+      {
+        "sha": "329dff36ec1d57172f9a44085cf2c8ff0fc61035",
+        "committed_at": "2026-05-31T04:29:36Z"
+      },
+      {
+        "sha": "6d810faa8ce69c5fe93855ab0a01aa056f08e027",
+        "committed_at": "2026-05-31T04:48:59Z"
+      },
+      {
+        "sha": "2a9da034c3ce4e018f22cab3f7273769f199375a",
+        "committed_at": "2026-05-31T04:52:55Z"
+      },
+      {
+        "sha": "22a28a4009d765df6c4e1f0c9de79e884382e816",
+        "committed_at": "2026-05-31T05:01:12Z"
+      },
+      {
+        "sha": "6c388ebf3fb78dd52eed036ce57bf3e323d0ed01",
+        "committed_at": "2026-05-31T05:18:01Z"
+      },
+      {
+        "sha": "d1c6c978f58a7e65735ce4ac101c686a2f76cecb",
+        "committed_at": "2026-05-31T05:20:57Z"
+      },
+      {
+        "sha": "27ace1597120346993819146ea5cedec95003ea2",
+        "committed_at": "2026-05-31T05:31:50Z"
+      },
+      {
+        "sha": "1b7e62f37f27fe765464c9a733f17789721ecfda",
+        "committed_at": "2026-05-31T05:35:12Z"
+      },
+      {
+        "sha": "c7e328c0067b701bcbffb35e1d15a748437e2871",
+        "committed_at": "2026-05-31T05:37:47Z"
+      },
+      {
+        "sha": "22d6f130df763e4ad4c8192543b1ca4e1044bd63",
+        "committed_at": "2026-05-31T05:47:06Z"
+      },
+      {
+        "sha": "8930ef545bd659eaf7f19ce00995043ff4d00cb5",
+        "committed_at": "2026-05-31T05:50:52Z"
+      },
+      {
+        "sha": "c05eafede2cea22c363059ed4b43800518c9752d",
+        "committed_at": "2026-05-31T05:53:51Z"
+      },
+      {
+        "sha": "28bf5d0e8818fe59ccdc8eec7f48d01a3a36bcbe",
+        "committed_at": "2026-05-31T05:55:05Z"
+      },
+      {
+        "sha": "9e0aee709fd2a107c8dc81f1b3333377c8925b11",
+        "committed_at": "2026-05-31T06:02:50Z"
+      },
+      {
+        "sha": "e6b00e6346ab5a0ad4b3d0bf57c3d07cf1a2c831",
+        "committed_at": "2026-05-31T06:14:30Z"
+      },
+      {
+        "sha": "d82a0d20e9a3d7474a5162e0417ad3f90f145f8a",
+        "committed_at": "2026-05-31T06:23:15Z"
+      },
+      {
+        "sha": "b7ea88b32daabf1621595a69c0ade5e3ba968839",
+        "committed_at": "2026-05-31T06:35:50Z"
+      },
+      {
+        "sha": "e2b2551781436972b93ffc6ac6c7fd5d3133a4d8",
+        "committed_at": "2026-05-31T06:39:01Z"
+      },
+      {
+        "sha": "44e0ac026e2d41fed35717f494cbdfeef1594674",
+        "committed_at": "2026-05-31T07:17:31Z"
+      },
+      {
+        "sha": "1e7d9f2831be5158d27468ce5ba839e56641941a",
+        "committed_at": "2026-05-31T07:23:29Z"
+      },
+      {
+        "sha": "305411c0de607abafd818e12161d45c6e3800eca",
+        "committed_at": "2026-05-31T07:30:13Z"
+      },
+      {
+        "sha": "cac255d1424b1da245b5fccb7c3fe02108206c33",
+        "committed_at": "2026-05-31T07:49:53Z"
+      },
+      {
+        "sha": "94ad78f3ce450c58dd1b6e2690fe576f0924293b",
+        "committed_at": "2026-05-31T08:01:14Z"
+      },
+      {
+        "sha": "2f6c957e218f183fb5028a8dfd7457903d51d42f",
+        "committed_at": "2026-05-31T08:09:46Z"
+      },
+      {
+        "sha": "ccd1f91947afdd54e6f955a4de8a9cc3176b5d56",
+        "committed_at": "2026-05-31T08:20:09Z"
+      },
+      {
+        "sha": "702f110c63fd4b979bded67a49dab449a37e806f",
+        "committed_at": "2026-05-31T08:23:02Z"
+      },
+      {
+        "sha": "25a382f659e687171c764fe4ecbf0807815ca2ec",
+        "committed_at": "2026-05-31T08:27:44Z"
+      },
+      {
+        "sha": "52775c17b20979cd25846acbeb40469b89c1b71d",
+        "committed_at": "2026-05-31T08:38:00Z"
+      },
+      {
+        "sha": "39e3b239c1abab781712dfe7a16776c8fbc33495",
+        "committed_at": "2026-05-31T08:44:31Z"
+      },
+      {
+        "sha": "3c9fc662a3a2080dd6ddec27d669c46fb7362082",
+        "committed_at": "2026-05-31T08:52:23Z"
+      },
+      {
+        "sha": "716c65c317d8f75814cd589cf3d39ddcc12e340b",
+        "committed_at": "2026-05-31T09:04:19Z"
+      },
+      {
+        "sha": "c7902b063ee58544e7a98335ff55a9784528b652",
+        "committed_at": "2026-05-31T09:10:27Z"
+      },
+      {
+        "sha": "1a9bc566ee86a0a25a4a42da493310f7afbc4eb6",
+        "committed_at": "2026-05-31T09:17:00Z"
+      },
+      {
+        "sha": "24c4fa69e624b05957a20531aae7a3616bcfc114",
+        "committed_at": "2026-05-31T09:21:48Z"
+      },
+      {
+        "sha": "c3f3f4f3543fa43973b52128b15a24fffe1bb6bc",
+        "committed_at": "2026-05-31T09:30:58Z"
+      },
+      {
+        "sha": "78a789d0b3f60c48055685edbec41c1d9d747ad7",
+        "committed_at": "2026-05-31T09:54:36Z"
+      },
+      {
+        "sha": "5f64dee2b79d7d61c0ca493102a4afafd4490c5c",
+        "committed_at": "2026-05-31T10:03:00Z"
+      },
+      {
+        "sha": "1adde17dcb327409e3f8c88668924ac51eb678a9",
+        "committed_at": "2026-05-31T22:01:02Z"
+      },
+      {
+        "sha": "32b78d64db254d9ed963830ff569867695fc73bd",
+        "committed_at": "2026-05-31T22:06:05Z"
+      },
+      {
+        "sha": "012a2fc285a73a38dc453a4cc8748c93b41c1e28",
+        "committed_at": "2026-05-31T22:15:14Z"
+      },
+      {
+        "sha": "ca6bc364391dd3390c3cb6ef984a4e557a9fdafc",
+        "committed_at": "2026-05-31T22:19:57Z"
+      },
+      {
+        "sha": "d1ccf7e7c290b8745d66ed2a8bc527244433a55a",
+        "committed_at": "2026-05-31T22:25:40Z"
+      },
+      {
+        "sha": "689c7a5281d6046c9efac540ad2d21a88ad46a2b",
+        "committed_at": "2026-05-31T22:35:59Z"
+      },
+      {
+        "sha": "afeb227ce43703f20b3cc2e67762d49ce50a8f8e",
+        "committed_at": "2026-05-31T22:52:58Z"
+      },
+      {
+        "sha": "6743ae986513328de2054f6103ea0491b4f56764",
+        "committed_at": "2026-05-31T22:57:57Z"
+      },
+      {
+        "sha": "ec238c3a5dfe41c01a02d796ce622b1f9f71ac46",
+        "committed_at": "2026-06-01T05:36:09Z"
+      },
+      {
+        "sha": "0dcadcf39c3956b9deae064ac797412da4390542",
+        "committed_at": "2026-06-01T05:48:10Z"
+      },
+      {
+        "sha": "c091e64f7ff8e28e45ff1aac3eeba86db109ebb3",
+        "committed_at": "2026-06-01T05:55:04Z"
+      },
+      {
+        "sha": "e80b8c390bc562d1927d5a00bfa75fd680f4f99d",
+        "committed_at": "2026-06-01T06:05:58Z"
+      },
+      {
+        "sha": "3a98413d1a8973f3a7dfe82e478ec7980ce8c298",
+        "committed_at": "2026-06-01T06:13:07Z"
+      },
+      {
+        "sha": "7b6f2e6398f8081ab5053bb2984eb043b646834f",
+        "committed_at": "2026-06-01T06:23:37Z"
+      },
+      {
+        "sha": "56be7c26c7235bef9036d383411540a30c75aa32",
+        "committed_at": "2026-06-01T06:39:02Z"
+      },
+      {
+        "sha": "4750a927b629b3ac78474f57b57d9cbb7cd9d4d0",
+        "committed_at": "2026-06-01T07:58:03Z"
+      },
+      {
+        "sha": "8fbfcc4017f3ad976d4d3a7738183d2361dc2ec6",
+        "committed_at": "2026-06-02T01:43:33Z"
+      },
+      {
+        "sha": "ff7dd63999c0e4ef22769a8c7371e564862f0e0c",
+        "committed_at": "2026-06-02T01:47:50Z"
+      },
+      {
+        "sha": "a9a12bbb9edcd373b0fc62dda547aee8ab2262d5",
+        "committed_at": "2026-06-02T01:51:06Z"
+      },
+      {
+        "sha": "574b9bf391aeee6807f7ad630b3cfc529e4309b9",
+        "committed_at": "2026-06-02T02:00:30Z"
+      },
+      {
+        "sha": "8a3f5e82b52a868ad115fe98191369e21eccae59",
+        "committed_at": "2026-06-02T02:07:24Z"
+      },
+      {
+        "sha": "6a5c73e75f1b4ddbe5343fced4b30ad9c64c95d0",
+        "committed_at": "2026-06-02T02:16:20Z"
+      },
+      {
+        "sha": "6ba90d3be2a1677d4a6f3c833295cafc37dba96b",
+        "committed_at": "2026-06-02T02:23:52Z"
+      },
+      {
+        "sha": "15ed786cdabf7d05c2f1b49954a5eea90fab4209",
+        "committed_at": "2026-06-02T02:36:30Z"
+      },
+      {
+        "sha": "75b8b90192c804a21c3dca4863b9af9206542229",
+        "committed_at": "2026-06-02T02:48:14Z"
+      },
+      {
+        "sha": "29eedc10c125dfac3f691cc8b69b3258e20de158",
+        "committed_at": "2026-06-02T02:56:56Z"
+      },
+      {
+        "sha": "37d3e291ab52b13939a13815e873d84dbbe5aa8e",
+        "committed_at": "2026-06-02T03:07:59Z"
+      },
+      {
+        "sha": "86d6b37a9c89985b06b191c4b141e7f5198292e4",
+        "committed_at": "2026-06-02T03:18:02Z"
+      },
+      {
+        "sha": "df3c3d9bf9e5dbf2217f8fa8853a8683ba724b72",
+        "committed_at": "2026-06-02T03:27:42Z"
+      },
+      {
+        "sha": "277959fe9735c8c63b1a973dfef01a8eb9180eec",
+        "committed_at": "2026-06-02T03:40:44Z"
+      },
+      {
+        "sha": "bc70e84398edfcbe8437a4b1daf3c212a977d7c3",
+        "committed_at": "2026-06-02T03:47:12Z"
+      },
+      {
+        "sha": "c74d11e3024ad10f1271146a9d11a835fc2af89a",
+        "committed_at": "2026-06-02T04:02:29Z"
+      },
+      {
+        "sha": "399d444137474ae8bb8313b9c4417afe46ac8adb",
+        "committed_at": "2026-06-02T04:12:18Z"
+      },
+      {
+        "sha": "499fcc66cf20af6731907c61443783b1928fe8f9",
+        "committed_at": "2026-06-02T04:31:04Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6072,
+    "title": "Rewrite visual snapshot CI: simpler, race-free, no false positives",
+    "head_ref": "maximedegreve/fix-visual-regression-local",
+    "base_ref": "main",
+    "user_login": "maximedegreve",
+    "created_at": "2026-06-01T10:55:59Z",
+    "closed_at": "2026-06-02T06:46:29Z",
+    "merged_at": "2026-06-02T06:46:29Z",
+    "merged": true,
+    "additions": 600,
+    "deletions": 400,
+    "changed_files": 2,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "01ebd5bd3b281be29273501efff3a8b10930f830",
+        "committed_at": "2026-06-01T12:37:03Z"
+      },
+      {
+        "sha": "b3230f6409ac70b6cf8320d64482e461e94ca693",
+        "committed_at": "2026-06-01T12:47:08Z"
+      },
+      {
+        "sha": "0293bb044726054d827beb749bdf73b611f01df8",
+        "committed_at": "2026-06-01T13:00:07Z"
+      },
+      {
+        "sha": "aacde7d38e415f62ddc598374a55e34a3c07af45",
+        "committed_at": "2026-06-01T13:10:33Z"
+      },
+      {
+        "sha": "709325c43c09eb831940333044df7b89ba681249",
+        "committed_at": "2026-06-01T15:10:01Z"
+      },
+      {
+        "sha": "bf29ceef84b6e96c2500733525acae455940d59b",
+        "committed_at": "2026-06-01T16:38:08Z"
+      },
+      {
+        "sha": "04345d4cadb49f828c27add26a8c2847f845acf7",
+        "committed_at": "2026-06-01T16:40:47Z"
+      },
+      {
+        "sha": "17e3d812de1a64b7f56a3ae93d6800292be67b00",
+        "committed_at": "2026-06-01T17:03:29Z"
+      },
+      {
+        "sha": "a79217d0533ff774a3270e8edb9684b7fb8fd336",
+        "committed_at": "2026-06-01T17:21:47Z"
+      },
+      {
+        "sha": "41e68775d2ee7918a1f57d0a47fe8b118f4fc8c5",
+        "committed_at": "2026-06-01T17:36:28Z"
+      },
+      {
+        "sha": "27688f6949005675447d1d912cd80360a028ab43",
+        "committed_at": "2026-06-01T17:54:24Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6109,
+    "title": "perf: skip no-op lastDiff churn and narrow WorkspaceTabContent subscription",
+    "head_ref": "tclem/perf-lastdiff-churn",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-01T18:56:06Z",
+    "closed_at": "2026-06-02T02:07:40Z",
+    "merged_at": "2026-06-02T02:07:40Z",
+    "merged": true,
+    "additions": 128,
+    "deletions": 21,
+    "changed_files": 3,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "70de71427ed4af6697f1b9d88e231254cf12df9c",
+        "committed_at": "2026-06-01T18:52:01Z"
+      },
+      {
+        "sha": "4102cdcea8ed7a54f61f51c8860a35fd57ddab24",
+        "committed_at": "2026-06-01T18:52:35Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6129,
+    "title": "Open created issues as dedicated right-panel tabs",
+    "head_ref": "maximedegreve/issue-card-opens-overview-tab",
+    "base_ref": "main",
+    "user_login": "maximedegreve",
+    "created_at": "2026-06-01T21:21:04Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 1076,
+    "deletions": 41,
+    "changed_files": 23,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "6094c1be442e65d48cf67a8d482627c9104b55a3",
+        "committed_at": "2026-06-01T16:40:15Z"
+      },
+      {
+        "sha": "7787d9048ac9d1bd47b59534e5e256ff67c00319",
+        "committed_at": "2026-06-01T17:18:01Z"
+      },
+      {
+        "sha": "f11e03404c24df84e8b7da2c28bee9b0dc0232e9",
+        "committed_at": "2026-06-01T17:42:19Z"
+      },
+      {
+        "sha": "f69ad55cf814c276aad85bc76c342c437d3f3923",
+        "committed_at": "2026-06-01T18:13:50Z"
+      },
+      {
+        "sha": "c52086c452a756b89c035c92947e7c1fc20ccfe6",
+        "committed_at": "2026-06-01T18:15:38Z"
+      },
+      {
+        "sha": "e0c60e6de040dc42858d9cfe4b778fd71d0f062c",
+        "committed_at": "2026-06-01T19:29:12Z"
+      },
+      {
+        "sha": "73b52f47d5005ec86de09a97040ff761118f05e8",
+        "committed_at": "2026-06-01T19:38:04Z"
+      },
+      {
+        "sha": "d944f42d2788a495da8f4799ca92c043f2e59dcd",
+        "committed_at": "2026-06-01T19:56:14Z"
+      },
+      {
+        "sha": "ae9c2ef03689560a42eeb1b44cf4d8762bd3a18c",
+        "committed_at": "2026-06-01T20:39:09Z"
+      },
+      {
+        "sha": "53222f1b218a638337c58fb21a4ae49fe28b82ee",
+        "committed_at": "2026-06-01T20:49:05Z"
+      },
+      {
+        "sha": "c1bca5f035777cce35921f116abe642c6fbca911",
+        "committed_at": "2026-06-01T21:11:42Z"
+      },
+      {
+        "sha": "017949633085e1a1491e9acaa4a281a874b9ab1c",
+        "committed_at": "2026-06-01T21:22:47Z"
+      },
+      {
+        "sha": "d6e799061a190da6ec0560e2fde8b0544d73a20c",
+        "committed_at": "2026-06-02T06:53:41Z"
+      },
+      {
+        "sha": "3e46b5b7104eba334f4e7b4ebf0e231379d4d53f",
+        "committed_at": "2026-06-02T07:26:57Z"
+      },
+      {
+        "sha": "b4ae3575edfdbf7397c374d9303decdf2fb1cebe",
+        "committed_at": "2026-06-02T07:37:38Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6132,
+    "title": "Guard chat-history scrolling from stutter after switching workspaces (Phase 10a)",
+    "head_ref": "tclem/phase-10-warm-switch-scroll-fix",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-01T21:48:17Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 1682,
+    "deletions": 75,
+    "changed_files": 8,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "38d77d69ee82819d31ace0b8202b9705a0e78b78",
+        "committed_at": "2026-06-01T21:47:08Z"
+      },
+      {
+        "sha": "f11901119f4705af7b25cdeaf283a936139e2687",
+        "committed_at": "2026-06-02T03:29:41Z"
+      },
+      {
+        "sha": "01ec0b67672e5aa818e7aa74c144fbbe8eef0280",
+        "committed_at": "2026-06-02T03:50:15Z"
+      },
+      {
+        "sha": "0b261576dd1b6d4f2a3651bb288a84a43a891075",
+        "committed_at": "2026-06-02T03:57:13Z"
+      },
+      {
+        "sha": "3399b6f2e2cbe1c9979d747f3464331e4d260167",
+        "committed_at": "2026-06-02T05:33:23Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6140,
+    "title": "Bound v3 diff-surface renderer memory: chunk-LRU row retention + O(chunk) ingest (staff-gated)",
+    "head_ref": "tclem/diff-store-retention-ingest",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T01:32:04Z",
+    "closed_at": "2026-06-02T05:55:20Z",
+    "merged_at": "2026-06-02T05:55:20Z",
+    "merged": true,
+    "additions": 1591,
+    "deletions": 75,
+    "changed_files": 17,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "17ee64d0006e0322a0d9416492570a0f4a5f58dd",
+        "committed_at": "2026-06-01T23:31:14Z"
+      },
+      {
+        "sha": "b15f2a01dc4a91d6e0289dc2a1f7c3e63eeb41f0",
+        "committed_at": "2026-06-01T23:53:12Z"
+      },
+      {
+        "sha": "c668d2233c736415ac2f5d068cbf69708c6aa45b",
+        "committed_at": "2026-06-02T00:50:17Z"
+      },
+      {
+        "sha": "bca2f552a149117463099406e6c85152ace8e131",
+        "committed_at": "2026-06-02T00:57:23Z"
+      },
+      {
+        "sha": "f4bb24f64f6bfbd1a305b2caa77e64e8d520ecc2",
+        "committed_at": "2026-06-02T01:02:28Z"
+      },
+      {
+        "sha": "28fa4f1029e4493977403a20c087836bf9762d4f",
+        "committed_at": "2026-06-02T01:17:52Z"
+      },
+      {
+        "sha": "d9c6a6a3cec366406954dca1504e01f4648dea5e",
+        "committed_at": "2026-06-02T01:23:53Z"
+      },
+      {
+        "sha": "15fa4519a988aa8a03f5cf75d799950c6fac6c02",
+        "committed_at": "2026-06-02T01:44:18Z"
+      },
+      {
+        "sha": "1ea3624fdd0dd8079f985573b06abe032e16a080",
+        "committed_at": "2026-06-02T02:18:26Z"
+      },
+      {
+        "sha": "160322b428fb90d5101aaea24da355602920eff4",
+        "committed_at": "2026-06-02T03:37:05Z"
+      },
+      {
+        "sha": "c75831a6f35ea239877e6cb8b93d0b4240cd5d90",
+        "committed_at": "2026-06-02T03:38:52Z"
+      },
+      {
+        "sha": "16b7f31b8879d648377840105c346f3d627e614a",
+        "committed_at": "2026-06-02T03:55:21Z"
+      },
+      {
+        "sha": "19846307cdb50a3c39c12e5818e085c5bf00a515",
+        "committed_at": "2026-06-02T05:24:02Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6141,
+    "title": "Remove vestigial PR-sync status cache; document branch-sync surfaces",
+    "head_ref": "tclem/remove-pr-sync-status-cache",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T02:22:47Z",
+    "closed_at": "2026-06-02T06:05:28Z",
+    "merged_at": "2026-06-02T06:05:28Z",
+    "merged": true,
+    "additions": 352,
+    "deletions": 788,
+    "changed_files": 19,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "5dcfe34bef8ac0cf79b4ac1dc3f6ed666d3e44de",
+        "committed_at": "2026-06-02T00:50:39Z"
+      },
+      {
+        "sha": "56c35814004b598097a164ba100421adfa5300a7",
+        "committed_at": "2026-06-02T02:17:30Z"
+      },
+      {
+        "sha": "28554a77f42f99b7a60db782f459ae96547749ec",
+        "committed_at": "2026-06-02T02:30:24Z"
+      },
+      {
+        "sha": "8c32dedf0aa3164b5897b660168b9ddd427203b7",
+        "committed_at": "2026-06-02T03:48:55Z"
+      },
+      {
+        "sha": "b15b7498ea67fc1dff78e0671b74e0d8590d8b17",
+        "committed_at": "2026-06-02T05:42:35Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6143,
+    "title": "Stop build.rs rewriting copilot-sdk placeholders on every build",
+    "head_ref": "tclem/fix-build-script-fingerprint-churn",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T04:12:27Z",
+    "closed_at": "2026-06-02T05:28:29Z",
+    "merged_at": "2026-06-02T05:28:29Z",
+    "merged": true,
+    "additions": 23,
+    "deletions": 3,
+    "changed_files": 1,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "1c2c0149fb86c2052200ce6e8f417a03ccd6ab3e",
+        "committed_at": "2026-06-02T04:09:02Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6144,
+    "title": "Fix slash commands misrendered as cross-session messages",
+    "head_ref": "jmoseley/turbo-giggle",
+    "base_ref": "main",
+    "user_login": "jmoseley",
+    "created_at": "2026-06-02T04:16:40Z",
+    "closed_at": "2026-06-02T04:56:37Z",
+    "merged_at": "2026-06-02T04:56:37Z",
+    "merged": true,
+    "additions": 94,
+    "deletions": 1,
+    "changed_files": 4,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "7b841513b0dd28b32b4be01ceaa6d090b08e0a2f",
+        "committed_at": "2026-06-02T04:15:59Z"
+      },
+      {
+        "sha": "a6dbcf782a52861f3e2a24571d52d1c30e92539c",
+        "committed_at": "2026-06-02T04:18:04Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6146,
+    "title": "Add /chronicle cost-tips automation and run slash-command workflows",
+    "head_ref": "jmoseley/fluffy-system",
+    "base_ref": "main",
+    "user_login": "jmoseley",
+    "created_at": "2026-06-02T04:41:33Z",
+    "closed_at": "2026-06-02T07:07:15Z",
+    "merged_at": "2026-06-02T07:07:15Z",
+    "merged": true,
+    "additions": 378,
+    "deletions": 57,
+    "changed_files": 6,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "1424e3a550033af07ccac511f047b64d8f9e31f6",
+        "committed_at": "2026-06-02T04:38:35Z"
+      },
+      {
+        "sha": "ae8d6ce8ccd81809cc32a05da06957584656a737",
+        "committed_at": "2026-06-02T04:43:21Z"
+      },
+      {
+        "sha": "2ebdc03e19864b95cdfe5cd79b8dc86fbfcf39f2",
+        "committed_at": "2026-06-02T04:53:30Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6147,
+    "title": "fix: bind cloned projects to default account when host matches",
+    "head_ref": "chuwik/fix-project-account-host-match",
+    "base_ref": "main",
+    "user_login": "chuwik",
+    "created_at": "2026-06-02T04:43:27Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 180,
+    "deletions": 11,
+    "changed_files": 2,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "5c864df36b29ea97694464208399212349e835e3",
+        "committed_at": "2026-06-02T01:07:45Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6148,
+    "title": "Reduce idle macOS GPU compositing",
+    "head_ref": "fix/macos-idle-gpu-compositing",
+    "base_ref": "main",
+    "user_login": "krubenok",
+    "created_at": "2026-06-02T05:38:47Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 7,
+    "deletions": 2,
+    "changed_files": 3,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "c7f8cfd3f10196424bff73f2c3d04913fc5deb7b",
+        "committed_at": "2026-06-02T05:50:48Z"
+      },
+      {
+        "sha": "40c1034100c2d0e614bac2e132f09c1d026aaf23",
+        "committed_at": "2026-06-02T05:51:32Z"
+      },
+      {
+        "sha": "01b5f7dfe81b81b4c288775de50c60bc1ec5695e",
+        "committed_at": "2026-06-02T05:53:40Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6149,
+    "title": "Drop channel backlog on suspend to stop conversation auto-scroll replay",
+    "head_ref": "tclem/fix-conversation-autoscroll-replay",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T05:47:33Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 818,
+    "deletions": 0,
+    "changed_files": 6,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "b3767e9ac79041b8336e302c68900b2ec13e6068",
+        "committed_at": "2026-06-02T05:30:27Z"
+      },
+      {
+        "sha": "986ca3dbc8a09cb93d0aa0e6e3df0560beded9cc",
+        "committed_at": "2026-06-02T05:45:31Z"
+      },
+      {
+        "sha": "128c24a6c16f043da06e6e40302b337b4d8081d4",
+        "committed_at": "2026-06-02T05:49:05Z"
+      },
+      {
+        "sha": "8139d443c42ddf37ace7375ba3890ef7269cbe8f",
+        "committed_at": "2026-06-02T05:52:59Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6150,
+    "title": "Fix pinned-session indentation and pull pinned children into the Pinned group",
+    "head_ref": "tclem/pinned-session-offset",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T05:53:32Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 232,
+    "deletions": 5,
+    "changed_files": 5,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "1b38623f655ff2924cca25551740031c703948ec",
+        "committed_at": "2026-06-02T05:52:47Z"
+      },
+      {
+        "sha": "0417f887716ce71370eb6f1d3612a11251c54475",
+        "committed_at": "2026-06-02T05:55:08Z"
+      },
+      {
+        "sha": "241d1050e9d8d37375d8181fa049b24b7ee9a2e8",
+        "committed_at": "2026-06-02T07:07:35Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6151,
+    "title": "Show pointer cursor on markdown links when Cmd/Ctrl is held",
+    "head_ref": "ramsescab/markdown-link-pointer-cursor",
+    "base_ref": "main",
+    "user_login": "ramsescab",
+    "created_at": "2026-06-02T06:04:42Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 111,
+    "deletions": 1,
+    "changed_files": 6,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "c0d932472db706c21d3b550ab88915967b3ba63a",
+        "committed_at": "2026-06-02T06:03:17Z"
+      },
+      {
+        "sha": "4fc34409e419b0552a12aab16da399d8a16d4964",
+        "committed_at": "2026-06-02T06:06:14Z"
+      },
+      {
+        "sha": "e6adcad392ffd2ee814d46668ce0e6b407aece4c",
+        "committed_at": "2026-06-02T06:09:46Z"
+      },
+      {
+        "sha": "427ff4885eaace4fa10fb7fa30402852c1b94278",
+        "committed_at": "2026-06-02T06:11:15Z"
+      },
+      {
+        "sha": "b9ef7b6f750baa35d37b60176a26fd31dd0eedec",
+        "committed_at": "2026-06-02T06:42:17Z"
+      },
+      {
+        "sha": "8f3e0cd768a0bcc1a76e9e04b2a86600924a7e68",
+        "committed_at": "2026-06-02T06:49:00Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6152,
+    "title": "Prefetch v3 diff rows on mousedown intent to make cold reveals instant (staff-gated)",
+    "head_ref": "tclem/diff-cold-render-ws-channel",
+    "base_ref": "main",
+    "user_login": "tclem",
+    "created_at": "2026-06-02T06:12:26Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 1356,
+    "deletions": 13,
+    "changed_files": 18,
+    "labels": [
+      "skip-changelog"
+    ],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "17ee64d0006e0322a0d9416492570a0f4a5f58dd",
+        "committed_at": "2026-06-01T23:31:14Z"
+      },
+      {
+        "sha": "b15f2a01dc4a91d6e0289dc2a1f7c3e63eeb41f0",
+        "committed_at": "2026-06-01T23:53:12Z"
+      },
+      {
+        "sha": "c668d2233c736415ac2f5d068cbf69708c6aa45b",
+        "committed_at": "2026-06-02T00:50:17Z"
+      },
+      {
+        "sha": "bca2f552a149117463099406e6c85152ace8e131",
+        "committed_at": "2026-06-02T00:57:23Z"
+      },
+      {
+        "sha": "f4bb24f64f6bfbd1a305b2caa77e64e8d520ecc2",
+        "committed_at": "2026-06-02T01:02:28Z"
+      },
+      {
+        "sha": "28fa4f1029e4493977403a20c087836bf9762d4f",
+        "committed_at": "2026-06-02T01:17:52Z"
+      },
+      {
+        "sha": "d9c6a6a3cec366406954dca1504e01f4648dea5e",
+        "committed_at": "2026-06-02T01:23:53Z"
+      },
+      {
+        "sha": "15fa4519a988aa8a03f5cf75d799950c6fac6c02",
+        "committed_at": "2026-06-02T01:44:18Z"
+      },
+      {
+        "sha": "1ea3624fdd0dd8079f985573b06abe032e16a080",
+        "committed_at": "2026-06-02T02:18:26Z"
+      },
+      {
+        "sha": "c2b2528899feb565894869434c70a5f87b4c5712",
+        "committed_at": "2026-06-02T02:39:19Z"
+      },
+      {
+        "sha": "bc8eed89744a0993b4b7b7540aa03c59d33634f7",
+        "committed_at": "2026-06-02T03:22:16Z"
+      },
+      {
+        "sha": "2aa2aec68e903ea0a79d9f0d521dcb1cac691bcc",
+        "committed_at": "2026-06-02T03:36:35Z"
+      },
+      {
+        "sha": "160322b428fb90d5101aaea24da355602920eff4",
+        "committed_at": "2026-06-02T03:37:05Z"
+      },
+      {
+        "sha": "c75831a6f35ea239877e6cb8b93d0b4240cd5d90",
+        "committed_at": "2026-06-02T03:38:52Z"
+      },
+      {
+        "sha": "16b7f31b8879d648377840105c346f3d627e614a",
+        "committed_at": "2026-06-02T03:55:21Z"
+      },
+      {
+        "sha": "cdf116b2232680761bff82b51ca7e1986626d981",
+        "committed_at": "2026-06-02T04:28:19Z"
+      },
+      {
+        "sha": "0432537b497b367e5dee2156d8ae4f10f0b12d9c",
+        "committed_at": "2026-06-02T04:31:57Z"
+      },
+      {
+        "sha": "3d1e733388f811828b9ba3efc5d7451f16155cf6",
+        "committed_at": "2026-06-02T05:36:07Z"
+      },
+      {
+        "sha": "43ca98aff2b0ac4c4281840cc9b9cf35c579a788",
+        "committed_at": "2026-06-02T06:05:03Z"
+      },
+      {
+        "sha": "8a8f5e10ad04af53a82ff9d2b7514123eb78bf9e",
+        "committed_at": "2026-06-02T06:06:28Z"
+      },
+      {
+        "sha": "c4b0448525243a139c0a404393b4e49b63255ec4",
+        "committed_at": "2026-06-02T06:20:32Z"
+      },
+      {
+        "sha": "dd376116462ceab09625d488f594de2cb5584e8a",
+        "committed_at": "2026-06-02T06:48:45Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6154,
+    "title": "feat: support cloud sessions in create_session tool",
+    "head_ref": "chuwik/create-session-cloud-support",
+    "base_ref": "main",
+    "user_login": "chuwik",
+    "created_at": "2026-06-02T06:40:09Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 794,
+    "deletions": 149,
+    "changed_files": 14,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "98fdea5a214efbbff246d7e22af694cb3164a57e",
+        "committed_at": "2026-06-02T05:25:03Z"
+      },
+      {
+        "sha": "670797bbf1d27000b05d889a8ce762eae609df0e",
+        "committed_at": "2026-06-02T06:23:22Z"
+      },
+      {
+        "sha": "5741622356aab2dcf09fea1d5dadba259aa31901",
+        "committed_at": "2026-06-02T06:41:38Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6156,
+    "title": "Improve tray menu: status icon differentiation, wide-char truncation, Title Case",
+    "head_ref": "ramsescab/tray-menu-improvements",
+    "base_ref": "main",
+    "user_login": "ramsescab",
+    "created_at": "2026-06-02T07:05:34Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 195,
+    "deletions": 16,
+    "changed_files": 3,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "d3a6ae2bd9c5274b0016c3caf144b5eb28e36fa0",
+        "committed_at": "2026-06-02T07:01:46Z"
+      },
+      {
+        "sha": "363fcd5a392051306865ea5410b36cbbf5d41132",
+        "committed_at": "2026-06-02T07:03:19Z"
+      },
+      {
+        "sha": "b316d9a16297398dfe3c7c6323b72780aed65cc9",
+        "committed_at": "2026-06-02T07:07:09Z"
+      },
+      {
+        "sha": "3966990af562584e5e43972e0c7a8623858b9909",
+        "committed_at": "2026-06-02T07:12:42Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6157,
+    "title": "Fix deep link from browser creating duplicate sessions",
+    "head_ref": "lukasoppermann/fix-deep-link-duplicate-session",
+    "base_ref": "main",
+    "user_login": "lukasoppermann",
+    "created_at": "2026-06-02T07:24:32Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 24,
+    "deletions": 2,
+    "changed_files": 3,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "af283509aa4ff5ebd624cc73a25f580c4c4d74cc",
+        "committed_at": "2026-06-02T07:21:19Z"
+      },
+      {
+        "sha": "8d881a552757d153fa516c57e5650842a62cceae",
+        "committed_at": "2026-06-02T07:36:21Z"
+      },
+      {
+        "sha": "a61d677ee6e38f80528e4a335e96499694ae7d81",
+        "committed_at": "2026-06-02T07:39:12Z"
+      }
+    ]
+  },
+  {
+    "repo": "github/github-app",
+    "number": 6158,
+    "title": "Add dual options for issues and PRs in command palette",
+    "head_ref": "maximedegreve/support-opening-issues-through-command-p",
+    "base_ref": "main",
+    "user_login": "maximedegreve",
+    "created_at": "2026-06-02T07:39:23Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merged": false,
+    "additions": 75,
+    "deletions": 4,
+    "changed_files": 1,
+    "labels": [],
+    "milestone": null,
+    "commits": [
+      {
+        "sha": "70c561b5a46b148467de2e616941b93e6e242090",
+        "committed_at": "2026-06-02T07:38:33Z"
+      }
+    ]
+  }
+]

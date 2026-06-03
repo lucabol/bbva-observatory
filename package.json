@@ -1,0 +1,24 @@
+{
+  "name": "sprint-ai-flow-observatory",
+  "version": "1.0.0",
+  "description": "Local demo for lifecycle, Copilot agent observability, and AI line usage analytics.",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "sample-agent": "node scripts/sample-custom-agent.js",
+    "test": "node --test",
+    "check": "node --check src/observatory.js && node --check src/github-sync.js && node --check src/server.js && node --check public/app.js && node --check scripts/fetch-github-pr.js && node --check scripts/import-github-audit-log.js && node --check scripts/emit-agent-trace.js && node --check scripts/sample-custom-agent.js && node --check scripts/vscode-agent-telemetry-hook.js"
+  },
+  "keywords": [
+    "github",
+    "copilot",
+    "opentelemetry",
+    "dashboard",
+    "devex"
+  ],
+  "license": "UNLICENSED"
+}

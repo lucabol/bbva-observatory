@@ -1,0 +1,47 @@
+[
+  {
+    "enterprise_id": "bbva-ent",
+    "report_start_day": "2026-05-18",
+    "report_end_day": "2026-05-24",
+    "day_totals": [
+      {
+        "day": "2026-05-21",
+        "enterprise_id": "bbva-ent",
+        "daily_active_users": 2,
+        "monthly_active_agent_users": 2,
+        "loc_added_sum": 92,
+        "loc_deleted_sum": 11,
+        "pull_requests": {
+          "total_created": 1,
+          "total_merged": 1,
+          "median_minutes_to_merge": 1770,
+          "total_created_by_copilot": 1,
+          "total_merged_created_by_copilot": 1,
+          "median_minutes_to_merge_copilot_authored": 1770,
+          "total_reviewed_by_copilot": 1,
+          "total_copilot_suggestions": 4,
+          "total_copilot_applied_suggestions": 2
+        }
+      },
+      {
+        "day": "2026-05-24",
+        "enterprise_id": "bbva-ent",
+        "daily_active_users": 2,
+        "monthly_active_agent_users": 2,
+        "loc_added_sum": 45,
+        "loc_deleted_sum": 4,
+        "pull_requests": {
+          "total_created": 1,
+          "total_merged": 1,
+          "median_minutes_to_merge": 1290,
+          "total_created_by_copilot": 0,
+          "total_merged_created_by_copilot": 0,
+          "median_minutes_to_merge_copilot_authored": null,
+          "total_reviewed_by_copilot": 1,
+          "total_copilot_suggestions": 3,
+          "total_copilot_applied_suggestions": 1
+        }
+      }
+    ]
+  }
+]

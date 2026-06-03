@@ -1,0 +1,64 @@
+[
+  {
+    "repo": "bbva/demo-payments",
+    "number": 42,
+    "title": "Validate IBAN before payment creation",
+    "head_ref": "sprint-24/feature/validate-iban",
+    "base_ref": "main",
+    "user_login": "ana",
+    "created_at": "2026-05-20T10:00:00.000Z",
+    "closed_at": "2026-05-21T15:30:00.000Z",
+    "merged_at": "2026-05-21T15:30:00.000Z",
+    "merged": true,
+    "additions": 120,
+    "deletions": 30,
+    "changed_files": 6,
+    "labels": ["sprint-24", "agent-demo"],
+    "milestone": "Sprint 24",
+    "commits": [
+      { "sha": "abc1234", "committed_at": "2026-05-20T08:45:00.000Z" },
+      { "sha": "abc5678", "committed_at": "2026-05-20T09:20:00.000Z" }
+    ]
+  },
+  {
+    "repo": "bbva/demo-payments",
+    "number": 44,
+    "title": "Fix transaction limit edge case",
+    "head_ref": "sprint-24/bugfix/fix-limit",
+    "base_ref": "main",
+    "user_login": "marco",
+    "created_at": "2026-05-23T11:30:00.000Z",
+    "closed_at": "2026-05-24T09:00:00.000Z",
+    "merged_at": "2026-05-24T09:00:00.000Z",
+    "merged": true,
+    "additions": 50,
+    "deletions": 10,
+    "changed_files": 3,
+    "labels": ["sprint-24"],
+    "milestone": "Sprint 24",
+    "commits": [
+      { "sha": "def5678", "committed_at": "2026-05-23T09:00:00.000Z" },
+      { "sha": "def9999", "committed_at": "2026-05-23T10:15:00.000Z" }
+    ]
+  },
+  {
+    "repo": "bbva/demo-payments",
+    "number": 45,
+    "title": "Experiment with batch import",
+    "head_ref": "sprint-24/experiment/batch-import",
+    "base_ref": "main",
+    "user_login": "lucia",
+    "created_at": "2026-05-25T09:00:00.000Z",
+    "closed_at": "2026-05-25T13:00:00.000Z",
+    "merged_at": null,
+    "merged": false,
+    "additions": 80,
+    "deletions": 20,
+    "changed_files": 4,
+    "labels": ["sprint-24", "closed-without-merge"],
+    "milestone": "Sprint 24",
+    "commits": [
+      { "sha": "eee1111", "committed_at": "2026-05-25T08:30:00.000Z" }
+    ]
+  }
+]
