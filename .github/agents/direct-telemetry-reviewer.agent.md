@@ -69,16 +69,3 @@ bbva-observatory.azurewebsites.net
 
 If the emit step fails because the host is blocked, report that the allowlist
 entry is missing rather than skipping telemetry silently.
-
-> Reference examples `AGENTS.md.backup` and `.github/copilot-instructions.md.backup`
-> show the always-on repository-instruction version of this same directive.
-
-This file is the VS Code custom agent definition. The telemetry is not emitted by Markdown itself; it is emitted by the agent-scoped hooks above, which run `scripts/vscode-agent-telemetry-hook.js` on `SessionStart`, `PostToolUse`, and `Stop`.
-
-Prerequisites for telemetry:
-
-1. Make sure the cloud dashboard is reachable at `https://bbva-observatory.azurewebsites.net`.
-2. Enable custom agent hooks in VS Code with `chat.useCustomAgentHooks`.
-3. Select this agent in VS Code Chat.
-
-The hook posts a completed `invoke_agent` span with child `execute_tool` spans to `https://bbva-observatory.azurewebsites.net/otel/v1/traces` when the session stops.
