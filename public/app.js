@@ -248,7 +248,7 @@ async function syncGithubSettings(event) {
     maxPullRequestsPerRepo: Number($('#githubMaxPrs').value || 25)
   };
   button.disabled = true;
-  status.textContent = 'Fetching live GitHub pull requests...';
+  status.textContent = payload.includeCopilotMetrics ? 'Fetching GitHub PRs and Copilot usage metrics...' : 'Fetching GitHub PRs...';
   try {
     const response = await fetch('/api/settings/github-sync', {
       method: 'POST',
@@ -303,6 +303,7 @@ function formatGithubSyncError(error) {
 
   const details = error.details || {};
   const lines = [`Sync failed: ${error.message || details.error || 'Unknown error'}`];
+  if (details.sync_phase_label) lines.push(`Phase: ${details.sync_phase_label}`);
   if (error.status || details.status) lines.push(`HTTP status: ${error.status || details.status}`);
   if (details.code) lines.push(`Code: ${details.code}`);
   if (details.hint) lines.push(`What to try: ${details.hint}`);

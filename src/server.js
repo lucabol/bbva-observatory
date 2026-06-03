@@ -81,9 +81,19 @@ function errorPayload(error, statusCode) {
     code: error.code || (statusCode >= 500 ? 'server_error' : 'request_error'),
     status: statusCode,
     hint: error.hint || null,
+    sync_phase: error.syncPhase || null,
+    sync_phase_label: error.syncPhaseLabel || null,
     context: error.context || null,
     github: error.github || null
   };
+}
+
+function withSyncPhase(error, syncPhase, syncPhaseLabel) {
+  error.syncPhase = syncPhase;
+  error.syncPhaseLabel = syncPhaseLabel;
+  error.message = `${syncPhaseLabel} failed: ${error.message}`;
+  error.context = { ...(error.context || {}), sync_phase: syncPhase };
+  return error;
 }
 
 function sendErrorResponse(response, error) {
@@ -182,26 +192,35 @@ async function handlePostAiProvenance(request, response) {
 
 async function handlePostGitHubSync(request, response) {
   const payload = parseJsonBody(await readBody(request, 1_000_000));
-  const summary = await syncGithubPullRequests({
-    token: payload.token,
-    org: payload.org,
-    repositories: payload.repositories,
-    includeOrgRepos: payload.includeOrgRepos,
-    since: payload.since,
-    maxRepos: payload.maxRepos,
-    maxPullRequestsPerRepo: payload.maxPullRequestsPerRepo,
-    runtimeDir: RUNTIME_DIR
-  });
-  let copilotMetrics = null;
-  if (payload.includeCopilotMetrics) {
-    copilotMetrics = await syncCopilotMetrics({
+  let summary;
+  try {
+    summary = await syncGithubPullRequests({
       token: payload.token,
       org: payload.org,
-      enterprise: payload.enterprise,
+      repositories: payload.repositories,
+      includeOrgRepos: payload.includeOrgRepos,
       since: payload.since,
-      attributeTo: payload.attributeCopilotTo,
+      maxRepos: payload.maxRepos,
+      maxPullRequestsPerRepo: payload.maxPullRequestsPerRepo,
       runtimeDir: RUNTIME_DIR
     });
+  } catch (error) {
+    throw withSyncPhase(error, 'pull_request_fetch', 'Pull request fetching');
+  }
+  let copilotMetrics = null;
+  if (payload.includeCopilotMetrics) {
+    try {
+      copilotMetrics = await syncCopilotMetrics({
+        token: payload.token,
+        org: payload.org,
+        enterprise: payload.enterprise,
+        since: payload.since,
+        attributeTo: payload.attributeCopilotTo,
+        runtimeDir: RUNTIME_DIR
+      });
+    } catch (error) {
+      throw withSyncPhase(error, 'copilot_usage_metrics', 'Copilot usage metrics fetching');
+    }
   }
   sendJson(response, 200, {
     accepted: true,
