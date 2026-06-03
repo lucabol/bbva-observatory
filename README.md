@@ -24,6 +24,108 @@ npm run check
 node -e "console.log(require('./src/observatory').buildDashboardModel().lifecycle.summary)"
 ```
 
+## Generate data for each tab
+
+The dashboard reads two layers of data: bundled demo fixtures under `data/sample/` and your own ingested rows under `data/runtime/`. Both are merged, so out of the box every tab already shows realistic sample data. The steps below explain how to generate **fresh** data for each tab. Run `npm start` first, then refresh the dashboard (or click **Refresh data**) after each step to see the new rows.
+
+To work with only the data you generate yourself (no bundled fixtures), start the server in live data mode:
+
+```powershell
+$env:INCLUDE_SAMPLE_DATA = 'false'
+npm start
+```
+
+### #2 Lifecycle tab
+
+This tab needs branch-creation/commit events plus pull request records. Generate them with any of these:
+
+1. Simulate a GitHub `create`/`push`/`pull_request` webhook, which appends to `data/runtime/github-webhooks.ndjson`:
+
+   ```powershell
+   $payload = Get-Content .\data\sample\github-webhooks.ndjson -First 1 | ConvertFrom-Json
+   Invoke-RestMethod -Method Post -Uri http://localhost:3000/webhooks/github -Headers @{ 'X-GitHub-Event' = 'create' } -Body ($payload.payload | ConvertTo-Json -Depth 20) -ContentType 'application/json'
+   ```
+
+2. Pull a real pull request into `data/runtime/github-pull-requests.json`:
+
+   ```powershell
+   $env:GITHUB_TOKEN = 'github_pat_or_gh_token_with_repo_read'
+   node .\scripts\fetch-github-pr.js OWNER REPO PULL_NUMBER
+   ```
+
+3. Reconstruct historical branch-creation rows from a GitHub Enterprise audit log into `data/runtime/github-webhooks.ndjson` (see the [Step-by-step exactness guide](#1-historical-branch-creation-without-webhooks)):
+
+   ```powershell
+   node .\scripts\import-github-audit-log.js --enterprise ENTERPRISE --repo OWNER/REPO --since 2026-05-01
+   ```
+
+4. Or use the **Settings** tab (below) to bulk-fetch live PRs.
+
+### #4 Agent observability tab
+
+This tab needs custom-agent trace spans appended to `data/runtime/otel-spans.ndjson` (or posted to `POST /otel/v1/traces`):
+
+1. Emit a synthetic agent trace from the CLI:
+
+   ```powershell
+   node .\scripts\emit-agent-trace.js --agent payment-reviewer --user USER --team TEAM --repo OWNER/REPO --branch feature/example --tools readFile,edit,test
+   ```
+
+   Add `--running` to leave the session open and show an active live session.
+
+2. Or run the standalone agent-runtime simulator, which collects its own spans and flushes them to the same endpoint:
+
+   ```powershell
+   node .\scripts\sample-custom-agent.js --user USER --team TEAM --repo OWNER/REPO --branch feature/example --commit abc123 --pr 42
+   ```
+
+   Use `--dry-run` to print the payload without posting it.
+
+3. Or post raw OTLP/simplified span JSON directly:
+
+   ```powershell
+   $span = Get-Content .\data\sample\otel-spans.ndjson -First 1 | ConvertFrom-Json
+   Invoke-RestMethod -Method Post -Uri http://localhost:3000/otel/v1/traces -Body ($span | ConvertTo-Json -Depth 20) -ContentType 'application/json'
+   ```
+
+See [Live custom-agent traces without an OTel collector](#3-live-custom-agent-traces-without-an-otel-collector) for the VS Code custom-agent hook option.
+
+### #5 AI usage tab
+
+This tab divides AI-authored lines (numerator) by GitHub changed lines (denominator). Generate both sides:
+
+1. Ingest Copilot usage rows into `data/runtime/copilot-usage-users.ndjson`:
+
+   ```powershell
+   Invoke-RestMethod -Method Post -Uri http://localhost:3000/ingest/copilot-usage -InFile .\data\sample\copilot-usage-users.ndjson -ContentType 'application/x-ndjson'
+   ```
+
+2. For exact (non-directional) attribution, ingest edit-time AI provenance rows into `data/runtime/ai-provenance.ndjson`:
+
+   ```powershell
+   $row = @{
+     repo = 'OWNER/REPO'
+     sprint_id = 'sprint-25'
+     pr_number = 42
+     commit_sha = 'abc123'
+     user_id = 'USER'
+     feature = 'agent_edit'
+     loc_added_sum = 42
+     loc_deleted_sum = 8
+   } | ConvertTo-Json
+   Invoke-RestMethod -Method Post -Uri http://localhost:3000/ingest/ai-provenance -Body $row -ContentType 'application/json'
+   ```
+
+3. Provide the denominator by generating PR records (see the Lifecycle steps above), so each repo/sprint has GitHub additions and deletions to divide against.
+
+### Data & caveats tab
+
+This tab is the operator guide; it is derived from the model and the rules in the [Step-by-step exactness guide](#step-by-step-exactness-guide), so it needs no separate data generation. It updates automatically as you add data to the other tabs.
+
+### Settings tab
+
+Use this tab to bulk-generate Lifecycle/AI-usage denominator data from live GitHub. Open the **Settings** tab, enter a GitHub token plus an organization and/or explicit repositories, then click **Fetch live GitHub PRs**. The sync writes normalized PR records to `data/runtime/github-pull-requests.json` and refreshes the dashboard. See [Settings page live sync](#settings-page-live-sync) for the full field reference and the equivalent API call.
+
 ## What is implemented
 
 - `src/observatory.js` - analytics engine for lifecycle records, sprint bucketing, OTel agent traces, Copilot usage rows, and AI line percentages.
