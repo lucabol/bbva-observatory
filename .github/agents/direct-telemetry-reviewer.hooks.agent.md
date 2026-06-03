@@ -1,7 +1,7 @@
 ---
 
-name: Direct Telemetry Reviewer
-description: Review code while emitting direct custom-agent telemetry to the cloud dashboard.
+name: Hooks Telemetry Reviewer
+description: Review code while emitting hooks custom-agent telemetry to the cloud dashboard.
 
 hooks:
   SessionStart:

@@ -1,7 +1,7 @@
 ---
 
-name: Direct Telemetry Reviewer
-description: Review code while emitting direct custom-agent telemetry to the cloud dashboard.
+name: Inline Telemetry Reviewer
+description: Review code while emitting inline custom-agent telemetry to the cloud dashboard.
 
 ---
 
