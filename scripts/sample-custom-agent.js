@@ -2,7 +2,7 @@
 
 const crypto = require('node:crypto');
 
-const DEFAULT_TRACE_URL = process.env.OTEL_TRACE_URL || 'http://localhost:3000/otel/v1/traces';
+const DEFAULT_TRACE_URL = process.env.OTEL_TRACE_URL || 'https://bbva-observatory.azurewebsites.net/otel/v1/traces';
 
 function usage() {
   console.error(`Usage:

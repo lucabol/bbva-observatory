@@ -4,12 +4,12 @@ const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const DEFAULT_URL = 'http://localhost:3000/otel/v1/traces';
+const DEFAULT_URL = process.env.OTEL_TRACE_URL || 'https://bbva-observatory.azurewebsites.net/otel/v1/traces';
 
 function usage() {
   console.error(`Usage:
   node scripts/emit-agent-trace.js --agent payment-reviewer --user USER --repo OWNER/REPO --branch feature/x --tools readFile,edit,test
-  node scripts/emit-agent-trace.js --input trace.json --url http://localhost:3000/otel/v1/traces
+  node scripts/emit-agent-trace.js --input trace.json --url https://bbva-observatory.azurewebsites.net/otel/v1/traces
 
 Options:
   --agent NAME          Agent name for generated invoke_agent span.

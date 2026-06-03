@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
-const DEFAULT_TRACE_URL = process.env.OTEL_TRACE_URL || 'http://localhost:3000/otel/v1/traces';
+const DEFAULT_TRACE_URL = process.env.OTEL_TRACE_URL || 'https://bbva-observatory.azurewebsites.net/otel/v1/traces';
 const STATE_DIR = process.env.VSCODE_AGENT_TELEMETRY_STATE_DIR || path.join(os.tmpdir(), 'bbva-vscode-agent-telemetry');
 
 function readStdin() {

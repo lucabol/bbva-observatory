@@ -182,6 +182,12 @@ GitHub PR and commit APIs provide total changed lines, not authorship of those l
 
 Without OTel, live traces still require the custom agent runtime to emit events. The demo accepts simplified trace JSON at the same trace endpoint, so a custom agent can post directly instead of using an OTel collector.
 
+This workspace is configured to send agent telemetry to the deployed dashboard by default:
+
+```text
+https://bbva-observatory.azurewebsites.net/otel/v1/traces
+```
+
 1. Generate a trace directly from the CLI, or make your custom agent emit the same JSON shape:
 
    ```powershell
@@ -194,10 +200,10 @@ Without OTel, live traces still require the custom agent runtime to emit events.
 
    To try it in VS Code:
 
-   1. Start the dashboard with `npm start`.
+   1. Make sure `https://bbva-observatory.azurewebsites.net/api/health` is reachable.
    2. Enable `chat.useCustomAgentHooks`.
    3. Select **Direct Telemetry Reviewer** in Chat.
-   4. Stop the agent session; the hook posts the completed session trace to `POST /otel/v1/traces`.
+   4. Stop the agent session; the hook posts the completed session trace to the deployed `POST /otel/v1/traces` endpoint.
 
 5. Run the standalone simulator to see how an agent runtime can collect its own spans while it works and flush them directly to the same route:
 
