@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
-const DEFAULT_TRACE_URL = process.env.OTEL_TRACE_URL || 'https://bbva-observatory.azurewebsites.net/otel/v1/traces';
+const DEFAULT_TRACE_URL = envVar('OTEL_TRACE_URL') || 'https://bbva-observatory.azurewebsites.net/otel/v1/traces';
 const STATE_DIR = process.env.VSCODE_AGENT_TELEMETRY_STATE_DIR || path.join(os.tmpdir(), 'bbva-vscode-agent-telemetry');
 
 function readStdin() {
@@ -31,6 +31,15 @@ function hex(bytes) {
 
 function safeId(value) {
   return String(value || 'unknown-session').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 120);
+}
+
+function envVar(name) {
+  // A markdown formatter may escape underscores in the agent file's YAML
+  // frontmatter (`VSCODE_AGENT_TELEMETRY_AGENT` -> `VSCODE\_AGENT\_TELEMETRY\_AGENT`),
+  // which makes VS Code export the env var under the escaped key. Accept both.
+  if (process.env[name] !== undefined) return process.env[name];
+  const escaped = name.replace(/_/g, '\\_');
+  return process.env[escaped];
 }
 
 function statePath(sessionId) {
@@ -102,7 +111,7 @@ async function stopSession(input) {
     tools: []
   };
   const stoppedAt = input.timestamp || new Date().toISOString();
-  const agentName = process.env.VSCODE_AGENT_TELEMETRY_AGENT || 'vscode-direct-telemetry-agent';
+  const agentName = envVar('VSCODE_AGENT_TELEMETRY_AGENT') || 'vscode-direct-telemetry-agent';
   const user = process.env.GITHUB_USER || process.env.USERNAME || process.env.USER || 'unknown';
   const repo = process.env.GITHUB_REPOSITORY || normalizeRepo(state.cwd);
   const branch = process.env.GITHUB_BRANCH || 'vscode-agent-session';

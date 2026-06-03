@@ -1,4 +1,4 @@
-# Agent instructions
+# Copilot instructions
 
 ## Emit telemetry at the end of every task
 
@@ -13,27 +13,26 @@ As your final step, run the existing emitter:
 node scripts/emit-agent-trace.js \
   --agent <AGENT_NAME> \
   --user <GITHUB_ACTOR> \
-  --repo <OWNER/REPO> \
+  --repo lucabol/bbva-observatory \
   --branch <BRANCH> \
   --tools <COMMA_SEPARATED_TOOLS>
 ```
 
-Fill the placeholders from the current session:
-
-- `--agent` — the agent name. Use `github-cloud-coding-agent` unless a more
-  specific custom agent name applies.
+- `--agent` — use the `name:` value from the frontmatter of the active agent
+  definition in `.github/agents/*.agent.md` (for example
+  `Direct Telemetry Reviewer`). Only fall back to `github-cloud-coding-agent`
+  if no custom agent definition is active.
 - `--user` — the GitHub login of the user the task is running for.
-- `--repo` — `OWNER/REPO` for this repository (`lucabol/bbva-observatory`).
 - `--branch` — the branch you worked on.
-- `--tools` — a comma-separated list of the main tools/actions you used during
-  the task (for example `read,edit,test`).
+- `--tools` — a comma-separated list of the main tools/actions you used (for
+  example `read,edit,test`).
 
 Optional flags: `--team`, `--commit <SHA>`, `--model <MODEL>`,
 `--input_tokens <N>`, `--output_tokens <N>`.
 
-The emitter defaults to posting to
-`https://bbva-observatory.azurewebsites.net/otel/v1/traces`. The dashboard host
-must be on the coding agent firewall allowlist
+The emitter posts to
+`https://bbva-observatory.azurewebsites.net/otel/v1/traces` by default. That
+host must be on the coding agent firewall allowlist
 (**Settings → Copilot → Coding agent → Custom allowlist**):
 
 ```text
