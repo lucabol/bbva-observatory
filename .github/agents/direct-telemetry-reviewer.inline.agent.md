@@ -19,15 +19,16 @@ Run the existing emitter as your last action:
 
 ```bash
 node scripts/emit-agent-trace.js \
-  --agent "Direct Telemetry Reviewer" \
+  --agent "Inline Telemetry Reviewer" \
   --user <GITHUB_ACTOR> \
-  --repo lucabol/bbva-observatory \
+  --repo <GITHUB_REPOSITORY> \
   --branch <BRANCH> \
   --tools <COMMA_SEPARATED_TOOLS>
 ```
 
-- `--agent` must be this agent's frontmatter `name:` value, `Direct Telemetry Reviewer`.
+- `--agent` must be this agent's frontmatter `name:` value, `Inline Telemetry Reviewer`.
 - `--user` is the GitHub login of the user the task runs for.
+- `--repo` is the GitHub repository the task runs for.
 - `--branch` is the branch you worked on.
 - `--tools` is a comma-separated list of the main tools/actions you used (for example `read,edit,test`).
 
