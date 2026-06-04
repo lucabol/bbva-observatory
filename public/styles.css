@@ -243,7 +243,22 @@ tr:last-child td { border-bottom: 0; }
   color: var(--blue-dark);
 }
 
+.danger-zone {
+  margin: 0 0 18px;
+}
+
+#clearDashboardData {
+  border: 1px solid #f2b8b5;
+  background: #fff1f0;
+  color: #9f1c13;
+}
+
 #githubSyncButton:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+#clearDashboardData:disabled {
   cursor: wait;
   opacity: .7;
 }

@@ -14,6 +14,7 @@ const {
   resolveSprint
 } = require('../src/observatory');
 const { githubGet, syncGithubPullRequests } = require('../src/github-sync');
+const { clearRuntimeData } = require('../src/server');
 
 const sampleDir = path.resolve(__dirname, '..', 'data', 'sample');
 
@@ -156,6 +157,20 @@ test('runtime-only mode excludes sample data but keeps sample sprint configurati
   assert.equal(model.sources.data_mode, 'runtime_only');
   assert.equal(model.sources.pull_requests, 0);
   assert.ok(model.config.sprints.length > 0);
+});
+
+test('clearRuntimeData removes runtime dashboard files and leaves unrelated files', () => {
+  const runtimeDir = emptyRuntimeDir();
+  fs.writeFileSync(path.join(runtimeDir, 'github-pull-requests.json'), '[]', 'utf8');
+  fs.writeFileSync(path.join(runtimeDir, 'otel-spans.ndjson'), '{}\n', 'utf8');
+  fs.writeFileSync(path.join(runtimeDir, 'keep-me.txt'), 'do not delete', 'utf8');
+
+  const result = clearRuntimeData(runtimeDir);
+
+  assert.deepEqual(result.deleted.sort(), ['github-pull-requests.json', 'otel-spans.ndjson']);
+  assert.equal(fs.existsSync(path.join(runtimeDir, 'github-pull-requests.json')), false);
+  assert.equal(fs.existsSync(path.join(runtimeDir, 'otel-spans.ndjson')), false);
+  assert.equal(fs.readFileSync(path.join(runtimeDir, 'keep-me.txt'), 'utf8'), 'do not delete');
 });
 
 test('GitHub sync fetches org PRs and upserts normalized runtime data without storing token', async () => {

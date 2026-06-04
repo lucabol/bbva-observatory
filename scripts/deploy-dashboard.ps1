@@ -172,8 +172,13 @@ try {
 
   Compress-Archive -Path (Join-Path $PackageRoot "*") -DestinationPath $ZipPath -Force
 
-  Write-Host "> New-AzResourceGroup -Name $ResourceGroup -Location $Location"
-  New-AzResourceGroup -Name $ResourceGroup -Location $Location -Force | Out-Null
+  $ExistingResourceGroup = Get-AzResourceGroup -Name $ResourceGroup -ErrorAction SilentlyContinue
+  if (-not $ExistingResourceGroup) {
+    Write-Host "> New-AzResourceGroup -Name $ResourceGroup -Location $Location"
+    New-AzResourceGroup -Name $ResourceGroup -Location $Location -Force | Out-Null
+  } else {
+    Write-Host "Resource group '$ResourceGroup' already exists."
+  }
 
   $ExistingPlan = Get-AzAppServicePlan -ResourceGroupName $ResourceGroup -Name $PlanName -ErrorAction SilentlyContinue
   if (-not $ExistingPlan) {

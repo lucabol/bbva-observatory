@@ -219,6 +219,31 @@ function clearStoredGithubToken() {
   $('#settingsStatus').textContent = 'Saved GitHub token cleared from this browser.';
 }
 
+async function clearDashboardData() {
+  const status = $('#settingsStatus');
+  const button = $('#clearDashboardData');
+  if (!window.confirm('Delete all runtime dashboard data? This clears PRs, Copilot usage, AI provenance, webhooks, and agent traces.')) return;
+
+  button.disabled = true;
+  status.textContent = 'Clearing dashboard data...';
+  try {
+    const response = await fetch('/api/settings/clear-data', { method: 'POST' });
+    const result = await readJsonResponse(response);
+    if (!response.ok) {
+      const error = new Error(result.error || `Clear data failed with HTTP ${response.status}`);
+      error.status = response.status;
+      error.details = result;
+      throw error;
+    }
+    status.textContent = JSON.stringify(result, null, 2);
+    await loadModel();
+  } catch (error) {
+    status.textContent = formatGithubSyncError(error);
+  } finally {
+    button.disabled = false;
+  }
+}
+
 function bindGithubSettingsPersistence() {
   for (const selector of ['#githubOrg', '#githubRepos', '#attributeCopilotTo', '#githubSince', '#githubMaxRepos', '#githubMaxPrs']) {
     $(selector).addEventListener('input', persistGithubSettings);
@@ -356,6 +381,10 @@ $('#githubSettingsForm').addEventListener('submit', event => {
 
 $('#clearGithubToken').addEventListener('click', () => {
   clearStoredGithubToken();
+});
+
+$('#clearDashboardData').addEventListener('click', () => {
+  clearDashboardData();
 });
 
 loadStoredGithubSettings();

@@ -23,10 +23,19 @@ const API_ROUTES = [
   'GET /api/ai-usage',
   'GET /api/health',
   'POST /api/settings/github-sync',
+  'POST /api/settings/clear-data',
   'POST /webhooks/github',
   'POST /otel/v1/traces',
   'POST /ingest/copilot-usage',
   'POST /ingest/ai-provenance'
+];
+
+const RUNTIME_DATA_FILES = [
+  'github-webhooks.ndjson',
+  'github-pull-requests.json',
+  'copilot-usage-users.ndjson',
+  'ai-provenance.ndjson',
+  'otel-spans.ndjson'
 ];
 
 function parseBoolean(value, defaultValue = true) {
@@ -41,6 +50,19 @@ function ensureRuntime() {
 function appendNdjson(fileName, record) {
   ensureRuntime();
   fs.appendFileSync(path.join(RUNTIME_DIR, fileName), `${JSON.stringify(record)}\n`, 'utf8');
+}
+
+function clearRuntimeData(runtimeDir = RUNTIME_DIR) {
+  fs.mkdirSync(runtimeDir, { recursive: true });
+  const deleted = [];
+  for (const fileName of RUNTIME_DATA_FILES) {
+    const filePath = path.join(runtimeDir, fileName);
+    if (fs.existsSync(filePath)) {
+      fs.rmSync(filePath, { force: true });
+      deleted.push(fileName);
+    }
+  }
+  return { deleted, runtime_dir: runtimeDir };
 }
 
 function readBody(request, limitBytes = 2_000_000) {
@@ -231,6 +253,16 @@ async function handlePostGitHubSync(request, response) {
   });
 }
 
+async function handlePostClearData(request, response) {
+  const result = clearRuntimeData(RUNTIME_DIR);
+  sendJson(response, 200, {
+    accepted: true,
+    ...result,
+    include_sample_data: INCLUDE_SAMPLE_DATA,
+    caveat: INCLUDE_SAMPLE_DATA ? 'Sample fixtures are still enabled, so demo rows may remain visible. Set INCLUDE_SAMPLE_DATA=false for an empty dashboard after clearing runtime data.' : null
+  });
+}
+
 function normalizeRowsFromJson(payload) {
   if (Array.isArray(payload)) return payload;
   if (payload.rows && Array.isArray(payload.rows)) return payload.rows;
@@ -257,6 +289,7 @@ async function route(request, response) {
     if (request.method === 'POST' && url.pathname === '/ingest/copilot-usage') return handlePostCopilotUsage(request, response);
     if (request.method === 'POST' && url.pathname === '/ingest/ai-provenance') return handlePostAiProvenance(request, response);
     if (request.method === 'POST' && url.pathname === '/api/settings/github-sync') return handlePostGitHubSync(request, response);
+    if (request.method === 'POST' && url.pathname === '/api/settings/clear-data') return handlePostClearData(request, response);
 
     if (request.method === 'GET') return serveStatic(request.url, response);
     sendJson(response, 405, { error: 'Method not allowed' });
@@ -279,4 +312,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { route, requestListener };
+module.exports = { clearRuntimeData, route, requestListener };
