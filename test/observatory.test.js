@@ -13,7 +13,7 @@ const {
   normalizeAgentInvocations,
   resolveSprint
 } = require('../src/observatory');
-const { githubGet, syncGithubPullRequests } = require('../src/github-sync');
+const { fetchCopilotMetrics, githubGet, syncGithubPullRequests } = require('../src/github-sync');
 const { clearRuntimeData } = require('../src/server');
 
 const sampleDir = path.resolve(__dirname, '..', 'data', 'sample');
@@ -282,6 +282,37 @@ test('GitHub sync adds repository context to API failures', async () => {
       assert.match(error.message, /Failed to sync repository "acme\/missing"/);
       assert.match(error.hint, /owner\/repo/);
       assert.equal(error.github.status, 404);
+      return true;
+    }
+  );
+});
+
+test('Copilot metrics failures explain org-level endpoint and repo attribution', async () => {
+  const request = async apiPath => {
+    assert.equal(apiPath, '/orgs/Octodemo/copilot/metrics?since=2025-11-03T00%3A00%3A00.000Z');
+    const error = new Error('GitHub API 404 Not Found: Not Found');
+    error.statusCode = 404;
+    error.code = 'github_api_error';
+    error.hint = 'generic repo hint';
+    error.github = { method: 'GET', path: apiPath, status: 404, message: 'Not Found' };
+    throw error;
+  };
+
+  await assert.rejects(
+    fetchCopilotMetrics({
+      token: 'secret-token',
+      org: 'Octodemo',
+      since: '2025-11-03T00:00:00.000Z',
+      attributeTo: 'octodemo/octocat_supply-super-duper-octo-barnacle',
+      request
+    }),
+    error => {
+      assert.equal(error.statusCode, 404);
+      assert.match(error.hint, /organization Copilot metrics endpoint/);
+      assert.match(error.hint, /repository is not used/);
+      assert.equal(error.context.org, 'Octodemo');
+      assert.equal(error.context.repo, 'octodemo/octocat_supply-super-duper-octo-barnacle');
+      assert.equal(error.context.copilot_metrics_scope, 'org');
       return true;
     }
   );

@@ -349,6 +349,29 @@ function normalizeCopilotMetricsRow(dayMetrics, context = {}) {
   return row;
 }
 
+function withCopilotMetricsContext(error, context = {}) {
+  error.context = {
+    ...(error.context || {}),
+    org: context.org || null,
+    enterprise: context.enterprise || null,
+    repo: context.repo || null,
+    copilot_metrics_scope: context.enterprise ? 'enterprise' : 'org',
+    copilot_metrics_endpoint: context.endpoint || null
+  };
+
+  if (error.statusCode === 404) {
+    error.hint = context.enterprise
+      ? `GitHub returned 404 for the enterprise Copilot metrics endpoint. Verify enterprise slug "${context.enterprise}", token access to that enterprise, and Copilot metrics/report permissions. The repository is not used for this API call; it is only used later to attribute returned lines.`
+      : `GitHub returned 404 for the organization Copilot metrics endpoint. Verify organization slug "${context.org}" and that the token owner can access the org and has Copilot metrics permission. The repository is not used for this API call; it is only used later to attribute returned lines.`;
+  } else if (error.statusCode === 403) {
+    error.hint = context.enterprise
+      ? `The token can reach GitHub but cannot read enterprise Copilot metrics for "${context.enterprise}". Check enterprise Copilot metrics permissions, SSO authorization, and token scopes.`
+      : `The token can reach GitHub but cannot read organization Copilot metrics for "${context.org}". Check Copilot metrics permissions, SSO authorization, and token scopes.`;
+  }
+
+  return error;
+}
+
 async function fetchCopilotMetrics(options = {}) {
   const token = String(options.token || '').trim();
   const request = options.request || githubGet;
@@ -390,7 +413,13 @@ async function fetchCopilotMetrics(options = {}) {
   const base = enterprise
     ? `/enterprises/${encodeURIComponent(enterprise)}/copilot/metrics`
     : `/orgs/${encodeURIComponent(org)}/copilot/metrics`;
-  const result = await request(`${base}${query}`, token);
+  const endpoint = `${base}${query}`;
+  let result;
+  try {
+    result = await request(endpoint, token);
+  } catch (error) {
+    throw withCopilotMetricsContext(error, { org, enterprise, repo: options.attributeTo, endpoint });
+  }
   const days = Array.isArray(result.data) ? result.data : [];
   return { days, rateLimit: result.rateLimit, scope: enterprise ? 'enterprise' : 'org', org, enterprise, source_endpoint: 'copilot-metrics' };
 }
